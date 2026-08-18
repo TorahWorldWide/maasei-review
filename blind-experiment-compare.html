@@ -1,0 +1,286 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ניסוי הקורא העיוור — עיוור אחד מול פאנל שלושה · turkey-v2</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#0a1834;color:#dbe4f7;font-family:system-ui,'Segoe UI',Arial,sans-serif;line-height:1.8}
+.wrap{max-width:860px;margin:0 auto;padding:40px 18px 90px}
+h1{font-size:1.9rem;line-height:1.3;color:#e6c66e;margin:.1em 0 .4em;font-weight:800;letter-spacing:-.01em}
+h2{font-size:1.35rem;color:#e6c66e;margin:2.4em 0 .6em;font-weight:700}
+h3{font-size:1.02rem;color:#c9a84a;margin:1.8em 0 .5em;font-weight:700}
+p{margin:0 0 1.1em;color:rgba(219,228,247,.86);font-size:1.02rem}
+a{color:#e6c66e}
+.kicker{font-size:.8rem;color:#c9a84a;letter-spacing:.16em;text-transform:uppercase;margin:0 0 .5em}
+.tag{font-size:.82rem;color:#9fb0d0;margin:0 0 1.4em}
+.lead{background:rgba(201,168,74,.07);border:1px solid rgba(201,168,74,.2);border-radius:14px;
+      padding:20px 22px;margin:14px 0 30px}
+.lead p{font-size:1.08rem;color:#e8eefc;margin:0 0 .8em;line-height:1.8}
+.lead p:last-child{margin-bottom:0}
+.tracks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 30px}
+@media(max-width:640px){.tracks{grid-template-columns:1fr}}
+.card{background:rgba(15,35,77,.6);border:1px solid rgba(201,168,74,.18);border-radius:12px;padding:15px 17px}
+.card h3{margin:0 0 .5em}
+.card p{font-size:.93rem;margin:0 0 .6em}
+.card p:last-child{margin:0}
+.card .meta{font-size:.8rem;color:#8ea3c6;line-height:1.65}
+.tw{overflow-x:auto;margin:0 0 14px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:560px}
+th,td{padding:8px 9px;text-align:start;border-bottom:1px solid rgba(201,168,74,.14);vertical-align:top}
+th{color:#c9a84a;font-weight:700;font-size:.8rem;white-space:nowrap;border-bottom:1px solid rgba(201,168,74,.35)}
+th.c,td.c{text-align:center;width:56px}
+td.f{color:#dbe4f7;line-height:1.6}
+td.f small{display:block;color:#8ea3c6;font-size:.8rem;line-height:1.55;margin-top:2px}
+tr.grp td{background:rgba(201,168,74,.08);color:#e6c66e;font-weight:700;font-size:.85rem;
+      letter-spacing:.04em;padding:7px 9px;border-bottom:1px solid rgba(201,168,74,.25)}
+tr.all td.f{color:#f0e2b4}
+.y{color:#8fd694;font-weight:700}
+.n{color:#4b5c7d}
+.h{color:#e6c66e;font-weight:700}
+.x{color:#e6997f;font-weight:700}
+.legend{font-size:.82rem;color:#8ea3c6;margin:0 0 2em;line-height:1.7}
+.nums th,.nums td{font-size:.92rem}
+.nums td.k{color:#dbe4f7}
+.nums td.a{color:#c8b0a4}
+.nums td.b{color:#a8d0b0}
+.box{background:rgba(15,35,77,.6);border:1px solid rgba(201,168,74,.22);border-radius:14px;
+      padding:18px 20px;margin:20px 0}
+.box h3{margin:0 0 .6em}
+.box ul{margin:0;padding-inline-start:20px}
+.box li{margin:0 0 .55em;color:rgba(219,228,247,.86);font-size:.97rem;line-height:1.7}
+ul{margin:0 0 1.2em;padding-inline-start:22px}
+li{margin:.5em 0;color:rgba(219,228,247,.86);font-size:1rem;line-height:1.75}
+li b{color:#e8eefc}
+.warn{border-inline-start:3px solid #e07a5f;padding-inline-start:14px;margin:0 0 1.3em;
+      font-size:.93rem;color:#d9c3bb}
+.srcnote{border-inline-start:3px solid #c9a84a;padding-inline-start:14px;margin:0 0 1.3em;
+      font-size:.9rem;color:#9fb0d0}
+.verdict{background:rgba(201,168,74,.1);border:1px solid rgba(201,168,74,.45);border-radius:14px;
+      padding:18px 20px;margin:18px 0}
+.verdict b{color:#e6c66e}
+.pill{display:inline-block;font-size:.72rem;padding:2px 10px;border-radius:999px;
+      border:1px solid rgba(201,168,74,.4);color:#e6c66e;margin-inline-end:6px;white-space:nowrap}
+.pill.p{border-color:rgba(143,214,148,.45);color:#8fd694}
+.pill.o{border-color:rgba(224,122,95,.45);color:#e6997f}
+hr{border:0;border-top:1px solid rgba(201,168,74,.18);margin:44px 0}
+</style></head><body>
+<div class="wrap">
+
+<p class="kicker">מעשי ישראל · דוח ניסוי · 18.8.2026</p>
+<h1>ניסוי הקורא העיוור: קורא אחד עם פרוטוקול מול פאנל של שלושה בלי פרוטוקול</h1>
+<p class="tag">מושא הבדיקה: <a href="turkey-v2-page.html">turkey-v2-page.html</a> — "מהריסות קהרמנמרש עד מדליית המדינה"</p>
+
+<div class="lead">
+<p>אותו דף בדיוק נמסר לשני מסלולי בדיקה שלא ידעו זה על זה. מסלול א': הקורא העיוור — משרד קבוע בחברה, מודל פייבל, פרוטוקול מובנה (מבחן כותרת, שאלות תמימות ממוספרות, מבחן הקורא התם, מדד שעמום). מסלול ב': שלושה קוראים ישירים על אופוס, כל אחד בפרסונה אחרת — נהג משאית בן 58 מאשדוד, סטודנטית לרפואה בת 26 מברלין, ואם לחמישה מפתח תקווה — בלי פרוטוקול ובלי לדעת זה על זה.</p>
+<p>הדוח הזה סופר מה כל אחד תפס, איפה הם נפגשו, איפה רק אחד הגיע, כמה זה עלה, ומה שווה להריץ בפעם הבאה.</p>
+</div>
+
+<div class="tracks">
+<div class="card">
+<h3>א · הקורא העיוור</h3>
+<p>מודל פייבל, משרד קבוע, פרוטוקול מובנה. קרא את הדף ואת חמש התמונות בלבד.</p>
+<p class="meta">תוצר: 15 שאלות ממוספרות · 4 ממצאי קורא־תם · מדד שעמום · שורה תחתונה אחת<br>אורך: 9,668 בתים</p>
+</div>
+<div class="card">
+<h3>ב · פאנל שלושה קוראים</h3>
+<p>אופוס, שלוש פרסונות, בלי פרוטוקול. כל אחד קרא לבד את אותו דף ואת אותן תמונות.</p>
+<p class="meta">תוצר: שלושה דוחות גולמיים לא ערוכים<br>אורך: 43,736 בתים</p>
+</div>
+</div>
+
+<h2>המספרים, זה מול זה</h2>
+<div class="tw">
+<table class="nums">
+<thead><tr><th>מה נמדד</th><th>עיוור (א)</th><th>פאנל (ב)</th></tr></thead>
+<tbody>
+<tr><td class="k">בודקים</td><td class="a">1</td><td class="b">3</td></tr>
+<tr><td class="k">ממצאים שנספרו</td><td class="a">23</td><td class="b">42 (איחוד; 23 · 28 · 25 בנפרד)</td></tr>
+<tr><td class="k">ממצאים שרק המסלול הזה תפס</td><td class="a">6</td><td class="b">25</td></tr>
+<tr><td class="k">אורך התוצר</td><td class="a">9.7KB</td><td class="b">43.7KB (×4.5)</td></tr>
+<tr><td class="k">כפילויות פנימיות</td><td class="a">אין</td><td class="b">6 ממצאים חזרו אצל כל השלושה</td></tr>
+<tr><td class="k">צריך איחוד ידני לפני שימוש</td><td class="a">לא</td><td class="b">כן</td></tr>
+</tbody>
+</table>
+</div>
+<p class="srcnote">בסך הכול, אחרי איחוד וניכוי כפילויות: <b>48 ממצאים ייחודיים</b> על הדף. 17 מהם נתפסו בשני המסלולים, 6 רק בעיוור, 25 רק בפאנל.</p>
+
+<h2>מי תפס מה</h2>
+<p class="legend">
+<span class="y">●</span> תפס במפורש &nbsp;·&nbsp; <span class="h">◐</span> נגע חלקית או מזווית אחרת &nbsp;·&nbsp; <span class="n">○</span> לא הזכיר &nbsp;·&nbsp; <span class="x">✗</span> אמר במפורש את ההפך<br>
+ק1 = נהג משאית · ק2 = סטודנטית לרפואה · ק3 = אם לחמישה. שורות מודגשות = כל ארבעת הבודקים.
+</p>
+
+<div class="tw">
+<table>
+<thead><tr><th>ממצא</th><th class="c">עיוור</th><th class="c">ק1</th><th class="c">ק2</th><th class="c">ק3</th></tr></thead>
+<tbody>
+
+<tr class="grp"><td colspan="5">כותרת ופתיחה</td></tr>
+<tr class="all"><td class="f">"מדליית המדינה" מטעה — הקורא מבין שישראל העניקה מדליה לעצמה<small>כולם חזרו על אותו תיקון: "מדליה מידי ארדואן"</small></td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">"את רידואן" — ה' הידיעה מניחה שהקורא מכיר שם שלא הוצג</td><td class="c y">●</td><td class="c y">●</td><td class="c n">○</td><td class="c y">●</td></tr>
+<tr><td class="f">"קהרמנמרש" — הכותרת לא אומרת שזו טורקיה / קשה לקריאה</td><td class="c h">◐</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td></tr>
+<tr><td class="f">הפער בין הכותרת למציאות: 116 זרים מתוך 11,320 מ-90 מדינות<small>הכותרת מבטיחה הוקרה ייחודית, הגוף מוסר "היינו בין 116"</small></td><td class="c n">○</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">הליד מכריע בשקט מחלוקת שהדף עצמו מצהיר שאינו יכול להכריע ("השמישה מחדש")</td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td></tr>
+<tr><td class="f">"116 זרים" מופיע בליד בלי ההקשר שמגיע רק בסוף</td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td></tr>
+<tr><td class="f">הליד והפרק "הרעש והזינוק" הם כמעט אותו טקסט — קריאה כפולה</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td><td class="c y">●</td></tr>
+
+<tr class="grp"><td colspan="5">מספרים ועובדות</td></tr>
+<tr class="all"><td class="f">ארבעה מספרי משלחת סותרים בלי יישוב: 140 · 167 · "יותר מ-150" · 230</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr class="all"><td class="f">"הדרך לזירה" — מטח מספרים; כאן כולם צנחו בקשב<small>העיוור: "התחלתי לרפרף" · ק1: "מזה קפצתי לתמונות" · ק3: "גללתי בלי לקרוא"</small></td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">19 מול 18 מחולצים — נבחר המספר הגבוה, והסותר נשאר בלי ציטוט</td><td class="c h">◐</td><td class="c y">●</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">הערת 116 מול 130 שעות עוצרת את הרגע החזק בדף</td><td class="c n">○</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">מספר ההרוגים הטורקים לא מופיע בדף — אין קנה מידה<small>"ההשמטה הכי רועשת בעמוד"</small></td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">"פליטים סורים" — פרט מוסרי במקור יחיד בלי אישוש</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+
+<tr class="grp"><td colspan="5">ניסוח, ז'רגון ועקביות</td></tr>
+<tr class="all"><td class="f">"גולן ואך" בגוף מול "גולן וך" בכיתוב — אותו אדם, שני איותים</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr class="all"><td class="f">"הישראלי בתמונה הוא הצוות והציוד; הקירות היו טורקיים"<small>העיוור קרא את זה כניסוח עילג; השלושה קראו את זה כהתחכמות ופולמוס — אותה שורה, שתי אבחנות</small></td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">"דרגה ב'" — ז'רגון פנימי של המערכת שדלף לדף ציבורי</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">"מדליית ואות ההקרבה המעולה" — הצירוף קורא כשגיאת הקלדה, חוזר 3 פעמים</td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td></tr>
+<tr><td class="f">"עיריית ליליאן" — שם השגרירה נקרא כמוסד עירוני</td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td></tr>
+<tr><td class="f">"מתחם הנשיאות באנקרה" בגוף מול "מרכז הקונגרסים בבשטפה" בכיתוב</td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td></tr>
+<tr><td class="f">"רעידות 6 בפברואר" — ברבים, כשכל הדף מדבר על רעידה אחת</td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td></tr>
+<tr><td class="f">מבצע "ענפי זית" — השם לא מוסבר<small>ק3 הוסיפה: השם מוכר לה מהקשר טורקי אחר לגמרי בסוריה</small></td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td></tr>
+<tr><td class="f">הדרגות הצבאיות לא מובנות — מי גדול ממי, מי אומר מה</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td></tr>
+<tr><td class="f">"החילוץ הראשון שאומת בשם" — שפה של עורכי דין במקום שפה של אדם</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td></tr>
+
+<tr class="grp"><td colspan="5">מקורות ושקיפות</td></tr>
+<tr><td class="f">שני הציטוטים המרכזיים מובאים בטורקית בלבד, בלי תרגום<small>העיוור הציב את זה כתיקון מספר 1 שלו</small></td><td class="c y">●</td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td></tr>
+<tr><td class="f">מקורות עם "ממתין" — ודווקא הנתון החולק (Hürriyet) נשאר בלי ציטוט ולינק</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">"אמו ליילה נמצאה ללא רוח חיים" — בלי מקור, ובחצי משפט<small>העיוור שאל מאיפה זה בא; ק2 וק3 שאלו איך אפשר לעבור על זה ביעף</small></td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">מקור 5 — "נקרא תקציר בלבד", ובכל זאת מצוטטים ממנו שלושה משפטים</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">ארכוב מ-2026 מוצג בשורה אחת עם "ארכוב בן־יומו" — לא אותו דבר</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">ה-URL של מקור 8 מכיל "set up field hospital" — ראיה לסעיף בית החולים שלא נוצלה</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">מקור 15 — יד שלישית, והמקור הראשון "לא אותר"; והשגרירה צד מעוניין</td><td class="c h">◐</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">אתיקה: מי אישר צילום פצועים טורקים בידי יחידת הסברה של צבא זר</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+
+<tr class="grp"><td colspan="5">תמונות</td></tr>
+<tr class="all"><td class="f">"יכא"מ" על החולצה — לא מוסבר, והכיתוב מתעלם ממנו</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">תמונה 1: לא נראה בה מחולץ, וההערה "המחולץ אינו מזוהה" שולחת לחפש אדם שאינו בפריים</td><td class="c y">●</td><td class="c y">●</td><td class="c n">○</td><td class="c y">●</td></tr>
+<tr><td class="f">תמונה 2: הכיתוב אומר "חלוק", ובתמונה חולצת סקראבס</td><td class="c y">●</td><td class="c y">●</td><td class="c h">◐</td><td class="c y">●</td></tr>
+<tr><td class="f">תמונה 3: הכיתוב מבקש לאמת בעין כרזות שלא ניתן לקרוא ברזולוציה הזו<small>מחלוקת — ראו למטה</small></td><td class="c x">✗</td><td class="c y">●</td><td class="c y">●</td><td class="c x">✗</td></tr>
+<tr><td class="f">תמונה 4: קטנה ומטושטשת, ולא מזוהה מי הקצין שבה</td><td class="c n">○</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">תמונה 5: הפסוק זעיר מכדי לקרוא / התמונה מיותרת<small>מחלוקת — ראו למטה</small></td><td class="c x">✗</td><td class="c y">●</td><td class="c x">✗</td><td class="c y">●</td></tr>
+<tr><td class="f">אין בדף אף תמונה של רידואן, של ליילה, או של טורקי אחד ששמו ידוע</td><td class="c n">○</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+
+<tr class="grp"><td colspan="5">מבנה, טון וחסרים</td></tr>
+<tr><td class="f">הדף קרוי על שם רידואן ואינו מספר את סיפורו<small>הדף עצמו מודה בזה בקופסת "מה עוד לא ידוע" — ושלושת הקוראים שאלו למה בכל זאת לקרוא לו על שמו</small></td><td class="c n">○</td><td class="c y">●</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">פרק "בית חולים שדה" נקרא כהתגוננות ומפרסם האשמה שהקורא לא הכיר<small>ק2 חלקה במפורש: אצלה זה הפרק הכי אמיץ בדף</small></td><td class="c n">○</td><td class="c y">●</td><td class="c x">✗</td><td class="c y">●</td></tr>
+<tr><td class="f">"חיפשנו ולא נמצא" חוזר ארבע פעמים — מתחיל להישמע כחוסר ביטחון</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td><td class="c y">●</td></tr>
+<tr><td class="f">מבנה: כשליש מהדף ושתיים מחמש התמונות הן הטקס; החילוצים — סעיף אחד<small>"הפעולה מקבלת פחות מקום מהתשואות עליה"</small></td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">הפסוק "מי שמציל נפש אחת" נמצא גם בקוראן, והדף שותק על כך</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c y">●</td></tr>
+<tr><td class="f">סמיכות "לא היה איום ביטחוני" לציטוט הרמטכ"ל "היינו מודאגים"<small>העיוור: בלבול שדורש שורה מגשרת · ק2: מיתוס שנכנס דרך הדלת האחורית של סעיף אנטי־מיתוסי</small></td><td class="c y">●</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">טורקיה תרגמה את שם הפרס בעצמה "humanitarian service"; הדף בחר "הקרבה"</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td></tr>
+<tr><td class="f">אין בדף מילה על יחסי ישראל־טורקיה — ההקשר שהופך את הסיפור למעניין</td><td class="c n">○</td><td class="c y">●</td><td class="c n">○</td><td class="c n">○</td></tr>
+<tr><td class="f">"הורדנו שני חיילים בגלל מגבלת מקום" — פנינה אנושית שנזרקה ולא פותחה</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td></tr>
+<tr><td class="f">רס"ן הלל שלו — הקול היחיד בגוף ראשון, מופיע פעם אחת ונעלם</td><td class="c n">○</td><td class="c n">○</td><td class="c n">○</td><td class="c y">●</td></tr>
+
+</tbody>
+</table>
+</div>
+
+<h2>חפיפות — מה שכולם תפסו</h2>
+
+<p>שישה ממצאים נתפסו בנפרד בידי כל ארבעת הבודקים — קורא עם פרוטוקול ושלוש פרסונות שלא ידעו זו על זו. כשארבעה קוראים בלתי-תלויים נעצרים באותה נקודה, זו כבר לא שאלת טעם:</p>
+
+<div class="box">
+<h3>ששת הממצאים הוודאיים</h3>
+<ul>
+<li><b>"מדליית המדינה" בכותרת</b> — כולם קראו את זה כאילו ישראל מעניקה לעצמה מדליה, וכולם הציעו כמעט את אותו תיקון: "מדליה מידי ארדואן". שלושה מהם הוסיפו שהתיקון גם חזק יותר מהמקור.</li>
+<li><b>ארבעת מספרי המשלחת</b> — 140, 167, "יותר מ-150", 230. אף אחד מהארבעה לא ידע לומר בסוף כמה אנשים היו שם.</li>
+<li><b>"הדרך לזירה" הוא נקודת הנשירה</b> — ארבעה קוראים, אותה פסקה, אותה תגובה: רפרוף או גלילה החוצה. זו האבחנה החזקה ביותר בכל הניסוי, כי היא נמדדה ולא נשפטה.</li>
+<li><b>"גולן ואך" מול "גולן וך"</b> — שני איותים לאותו אדם. שלושה מהארבעה אמרו במפורש שזה מוריד להם אמון בשאר הפרטים.</li>
+<li><b>"יכא"מ" על החולצה</b> — כתוב בתמונה, לא מוסבר בשום מקום, והכיתוב מתעלם ממנו.</li>
+<li><b>"הישראלי בתמונה הוא הצוות והציוד; הקירות היו טורקיים"</b> — כולם נעצרו על המשפט הזה. מעניין שהם לא הסכימו למה: העיוור אמר שהוא עילג, השלושה אמרו שהוא מלוטש מדי. שתי אבחנות מנוגדות שמצביעות על אותה שורה.</li>
+</ul>
+</div>
+
+<p>מעבר לשישה, עוד 11 ממצאים נתפסו בשני המסלולים (17 בסך הכול) — ביניהם "דרגה ב'", מקורות ה"ממתין", "אמו ליילה", הציטוטים הטורקיים הלא-מתורגמים, ותמונה 1 שאין בה מחולץ.</p>
+
+<h2>ייחודים — ומה זה מלמד על השיטה</h2>
+
+<h3><span class="pill">6</span> רק הקורא העיוור</h3>
+<ul>
+<li>"מדליית ואות ההקרבה המעולה" — צירוף שקורא כשגיאת הקלדה, חוזר שלוש פעמים.</li>
+<li>"עיריית ליליאן" — שם השגרירה שנקרא כמוסד עירוני.</li>
+<li>"מתחם הנשיאות באנקרה" מול "מרכז הקונגרסים בבשטפה" — שני מקומות לאותו טקס.</li>
+<li>"רעידות 6 בפברואר" — רבים, בדף שכולו על רעידה אחת.</li>
+<li>הליד מכריע מחלוקת שהדף עצמו מצהיר שאינו יכול להכריע.</li>
+<li>"116 זרים" בליד בלי ההקשר שמגיע רק בסוף.</li>
+</ul>
+<p>כל שישה הם פגמים <b>פנימיים</b>: סתירה בין שני מקומות בדף, מילה שנקראת לא נכון, סדר שמכריע. כולם ניתנים לתיקון בשורה אחת, וכולם היו עוברים לדפוס. זה מה שהפרוטוקול קונה — הוא מכריח מעבר צמוד וממוספר, ומעבר צמוד תופס את מה שקריאה טבעית מחליקה מעליו.</p>
+
+<h3><span class="pill p">25</span> רק הפאנל</h3>
+<ul>
+<li><b>מה חסר בדף</b> — מספר ההרוגים הטורקים, סיפורו של רידואן, פניו של טורקי אחד ששמו ידוע, ההקשר הגיאופוליטי.</li>
+<li><b>מה הדף טוען במבנה שלו</b> — שליש מהאורך ושתיים מחמש התמונות מוקדשים לטקס, והחילוצים מקבלים סעיף אחד.</li>
+<li><b>איך הדף נשמע</b> — "חיפשנו ולא נמצא" ארבע פעמים, פרק בית החולים כהתגוננות, הפער בין הבטחת הכותרת ל-116 מתוך 11,320.</li>
+<li><b>ביקורת מקורות אמיתית</b> — ציטוט ממאמר שנקרא רק בתקציר, ארכוב מ-2026 שמוצג כבן־יומו, URL שהוא ראיה לסעיף אחר, מקור יד שלישית, ותרגום הפרס שטורקיה עצמה תרגמה אחרת.</li>
+<li><b>שאלה אתית</b> — מי אישר את צילום הפצועים הטורקים.</li>
+</ul>
+
+<div class="warn">
+<b>הנקודה הכי חשובה בכל הדוח:</b> מתוך 25 הממצאים הייחודיים של הפאנל, <b>9 הגיעו מקוראת אחת</b> — הסטודנטית לרפואה. ק1 תרם ייחוד אחד, ק3 תרמה שלושה. שאר הממצאים הייחודיים חולקו בין שניים מהשלושה. במילים אחרות: הערך של הפאנל לא בא מהמספר שלוש, אלא מכך שאחת מהפרסונות הייתה עוינת מספיק וידענית מספיק כדי לחזור למקורות. שלושה קוראים ידידותיים היו מייצרים כאן שלוש פעמים את אותם שישה ממצאים.
+</div>
+
+<h3>איפה הבודקים סתרו זה את זה</h3>
+<p>שתי סתירות אמיתיות, ושתיהן על תמונות:</p>
+<ul>
+<li><b>הכרזות בתמונה 3.</b> העיוור כתב "הכרזות בטורקית אכן נראות (ADVERS REAKSİYON בבירור)", וק3 כתבה "הכיתוב מדויק לגמרי ביחס למה שראיתי". ק1 וק2 כתבו שהם מזהים כרזה צהובה אבל <b>לא יכולים לקרוא את המילים</b>. שניים אישרו את הכיתוב, שניים אמרו שאי אפשר לאמת אותו בעין.</li>
+<li><b>הפסוק בתמונה 5.</b> העיוור כתב שהפסוק "אכן על המסך"; ק3 כתבה שהוא זעיר ושלא הצליחה לקרוא אותו בעצמה; ק2 דווקא קראה מהמסך גם את הכיתוב האנגלי הרשמי שאיש אחר לא הבחין בו.</li>
+</ul>
+<p>המסקנה המתודית לא מחמיאה לאף מסלול: <b>אימות חזותי בקריאה יחידה אינו אמין.</b> קורא אחד שמאשר "רואים בבירור" הוא לא אישוש — הוא דעה אחת. אם הדף מבקש מהקורא לאמת משהו בעין, צריך יותר מזוג עיניים אחד, או תקריב.</p>
+
+<h2>עלות</h2>
+
+<p class="srcnote"><b>הערכה גסה.</b> המספרים למטה מחושבים מגודל הקבצים בפועל ומהערכת עלות תמונה סטנדרטית, לא ממדידת חיוב אמיתית. הם נכונים בסדר הגודל ובאמת ההשוואתית, לא בספרה האחרונה. טקסט עברי נספר כאן בקירוב של טוקן לכל שתי תווים.</p>
+
+<div class="tw">
+<table class="nums">
+<thead><tr><th>רכיב</th><th>עיוור (א)</th><th>פאנל (ב)</th></tr></thead>
+<tbody>
+<tr><td class="k">הדף עצמו (25KB, עברית + תגיות)</td><td class="a">~11,000</td><td class="b">~33,000 (×3)</td></tr>
+<tr><td class="k">חמש התמונות (~1,500 לכל אחת)</td><td class="a">~7,500</td><td class="b">~22,500 (×3)</td></tr>
+<tr><td class="k">הוראות: משרד ופרוטוקול / פרסונה</td><td class="a">~10,000</td><td class="b">~1,500</td></tr>
+<tr><td class="k">פלט</td><td class="a">~3,500</td><td class="b">~15,000</td></tr>
+<tr><td class="k"><b>סה"כ טוקנים</b></td><td class="a"><b>~32,000</b></td><td class="b"><b>~72,000</b></td></tr>
+<tr><td class="k">+ איחוד שלושת הדוחות לתוצר אחד</td><td class="a">לא נדרש</td><td class="b">~+22,000</td></tr>
+<tr><td class="k"><b>סה"כ עם איחוד</b></td><td class="a"><b>~32,000</b></td><td class="b"><b>~94,000 (×2.9)</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>מה התקבל תמורת זה</h3>
+<div class="tw">
+<table class="nums">
+<thead><tr><th>מדד תשואה</th><th>עיוור (א)</th><th>פאנל (ב)</th></tr></thead>
+<tbody>
+<tr><td class="k">ממצאים</td><td class="a">23</td><td class="b">42</td></tr>
+<tr><td class="k">טוקנים לממצא</td><td class="a">~1,400</td><td class="b">~1,700 (~2,200 עם איחוד)</td></tr>
+<tr><td class="k">אם מריצים אותו <b>שני</b> — כמה עולה ממצא חדש</td><td class="a">~5,300 (6 חדשים)</td><td class="b">~2,900 (25 חדשים)</td></tr>
+</tbody>
+</table>
+</div>
+<p>השורה האחרונה היא הכנה ביותר. אם כבר הרצת את האחד — כמה עולה להריץ גם את השני: הפאנל מוסיף 25 ממצאים חדשים בכ-2,900 טוקנים לממצא. העיוור, אם הוא רץ שני, מוסיף 6 ממצאים בכ-5,300 טוקנים לממצא — <b>אבל</b> ששת הממצאים האלה הם כולם פגמי טקסט שהיו מגיעים לדפוס, וכל אחד מהם מתוקן בדקה. עלות לממצא היא לא אותו דבר כמו ערך הממצא, ואף אחת מהטבלאות למעלה לא מודדת את זה.</p>
+
+<h2>המלצה כנה</h2>
+
+<div class="verdict">
+<p><b>המסלולים לא מחליפים זה את זה, כי הם לא מוצאים אותו סוג ממצא.</b> הפרוטוקול של הקורא העיוור שואל "מה כתוב כאן ומה זה עושה לי", ולכן הוא תופס סתירות פנימיות, מילים שנקראות לא נכון וסדר שמכריע. הפאנל שואל "מה אני מרגיש כלפי הדף הזה", ולכן הוא תופס מה שהדף לא אמר, מה שהמבנה שלו טוען, ואיך הוא נשמע. אף אחד מהם לא היה מספיק לבדו.</p>
+</div>
+
+<ul>
+<li><b>ברירת המחדל: הקורא העיוור.</b> הוא זול פי שלושה, מגיע כתוצר אחד שאפשר לעבוד ממנו בלי איחוד, ותופס את הקטגוריה שהכי מביכה בדפוס — סתירות פנימיות ופגמי ניסוח. שישה ממצאים כאלה בדף אחד. על כל דף, כל פעם.</li>
+<li><b>פאנל — כשלדף יש טענה או מסגור.</b> הדף הזה טוען טענה על יחסי מדינות ונקרא על שם ילד. שם בדיוק הפאנל החזיר את התשואה: אין מספר הרוגים, אין סיפור של רידואן, שליש מהדף הוא הטקס. על דף טכני או תיאורי, הפאנל היה מחזיר בעיקר את אותם שישה ממצאים שלוש פעמים.</li>
+<li><b>אם מריצים פאנל — לא שלושה, ולא ידידותיים.</b> הראיה בדוח הזה חד-משמעית: קוראת אחת הביאה 9 מ-25 הייחודים. השאר תרמו 4 ביחד. שני קוראים בפרסונות מנוגדות ועוינות ייתנו כמעט את אותה תשואה בשני שלישים מהעלות. שלישי מוסיף בעיקר כפילויות.</li>
+<li><b>שניהם יחד — לדף דגל בלבד.</b> ~126,000 טוקנים ואיחוד ידני עבור 48 ממצאים. משתלם כשהדף עומד לצאת לציבור ונושא טענה שאפשר לתקוף. לא משתלם כשגרה.</li>
+<li><b>אימות חזותי צריך שני זוגות עיניים בכל מקרה.</b> זה תוצר לוואי של הניסוי ואולי הדבר הכי שימושי בו: הבודקים סתרו זה את זה על שתי תמונות. כיתוב שמבקש מהקורא "תראו בעצמכם" חייב אישור מקורא שני, או תקריב.</li>
+</ul>
+
+<h3>מה הניסוי הזה לא מוכיח</h3>
+<p class="warn">שני המסלולים נבדלים בשלושה משתנים בבת אחת — מודל שונה (פייבל מול אופוס), פרוטוקול מול חופש, ואחד מול שלושה. לכן <b>אי אפשר לייחס את הפער לפרוטוקול</b>. ייתכן שאופוס בלי פרוטוקול היה תופס גם את "עיריית ליליאן", וייתכן שפייבל בשלוש פרסונות היה תופס את מספר ההרוגים. הניסוי הבא צריך לשנות משתנה אחד: אותו מודל, פעם עם פרוטוקול ופעם בלי. בלי זה, כל מה שכתוב למעלה הוא תיאור של מה שקרה — לא הסבר למה.</p>
+
+<hr>
+<p class="tag">מקורות הדוח: <code>blind-single.md</code> (9,668 בתים) · <code>blind-panel.md</code> (43,736 בתים) · <code>turkey-v2-page.html</code> (25,048 בתים). כל שורה בטבלה נספרה מהקבצים עצמם.</p>
+
+</div>
+</body></html>
