@@ -1,0 +1,26 @@
+<!doctype html><html lang="he" dir="rtl"><head><title>הוצאות המעבדה</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--gold:#c9a84a;--ink:#1c1c1e;--mute:#6e6e73;--line:#e5e5ea;--bg:#f7f7f9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,system-ui,sans-serif;direction:rtl;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0 .3em;color:var(--navy)}h2{font-size:1.2rem;color:var(--navy);margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.2em}
+h3{font-size:1.02rem;margin:1.2em 0 .3em}
+.sub{color:var(--mute);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.summary{background:#fff;border-right:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff}th,td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;text-align:right}th{background:#fafafa;color:var(--navy);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+a{color:#0a4fa3;text-decoration:none}a:hover{text-decoration:underline}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;background:#eef2f8;color:var(--navy);margin-inline-start:4px}
+.ok{color:#1a7f37}.bad{color:#b42318}.warn{color:#b26a00}.mute{color:var(--mute)}
+nav{display:flex;gap:10px;flex-wrap:wrap;font-size:.9rem;margin:6px 0 14px}nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.md p{margin:.5em 0}.md blockquote{border-right:3px solid var(--gold);margin:.6em 0;padding:.2em 12px;color:#333;background:#fbfaf6}.md table{font-size:.85rem}
+.md h1{font-size:1.35rem}.md h2{font-size:1.15rem}.md h3{font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+.small{font-size:.8rem}
+</style>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>הוצאות המעבדה</h1><div class="sub">כמה עלה כל ניסוי, וכמה עלה כל המבצע</div><div class="tbl"><table><tr><th>יחידה</th><th>מסלול</th><th>מודל</th><th>התחלה</th><th>משך</th><th>פלט</th><th>קלט</th><th>קריאת קאש</th><th>כתיבת קאש</th><th>מצב</th></tr></table></div><h2>סיכום לפי מודל</h2><div class="tbl"><table><tr><th>מודל</th><th>יחידות</th><th>פלט</th><th>קריאת קאש</th><th>זמן מצטבר</th></tr><tr><th>סה"כ</th><th>0</th><th class="num">0</th><th class="num">0</th><th class="num">0:00</th></tr></table></div><h2>צריכה מדודה (quota.py, השרת בלבד)</h2><div class="card small"><b>5 השעות האחרונות:</b> אופוס 5 <span class="num">4</span> · סונט 5 <span class="num">4</span> · פייבל 5.1 <span class="num">4</span><br><b>השבוע (מאז ראשון 07:00Z):</b> פייבל 5.1 <span class="num">36</span> · אופוס 5 <span class="num">4</span> · סונט 5 <span class="num">4</span> · <synthetic> <span class="num">0</span><br><span class="mute">אין עוגן /usage — לכן זו צריכה, לא יתרה. הרצת הרמס עצמה (ביקורות מנהל) נספרת תחת hermes-agent.</span></div><p class="sub small">מקור: ~/company/tokens/sessions.jsonl (token_ledger.py) לפי מזהה הסשן של כל יחידה. "פלט" = טוקני פלט; זה המד שמכסת המנוי מודדת בעיקר.</p><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 04.09 23:43Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>

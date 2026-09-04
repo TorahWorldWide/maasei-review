@@ -1,0 +1,1302 @@
+<!doctype html><html lang="he" dir="rtl"><head><title>היומן המכווץ בקוד</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--gold:#c9a84a;--ink:#1c1c1e;--mute:#6e6e73;--line:#e5e5ea;--bg:#f7f7f9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,system-ui,sans-serif;direction:rtl;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0 .3em;color:var(--navy)}h2{font-size:1.2rem;color:var(--navy);margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.2em}
+h3{font-size:1.02rem;margin:1.2em 0 .3em}
+.sub{color:var(--mute);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.summary{background:#fff;border-right:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff}th,td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;text-align:right}th{background:#fafafa;color:var(--navy);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+a{color:#0a4fa3;text-decoration:none}a:hover{text-decoration:underline}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;background:#eef2f8;color:var(--navy);margin-inline-start:4px}
+.ok{color:#1a7f37}.bad{color:#b42318}.warn{color:#b26a00}.mute{color:var(--mute)}
+nav{display:flex;gap:10px;flex-wrap:wrap;font-size:.9rem;margin:6px 0 14px}nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.md p{margin:.5em 0}.md blockquote{border-right:3px solid var(--gold);margin:.6em 0;padding:.2em 12px;color:#333;background:#fbfaf6}.md table{font-size:.85rem}
+.md h1{font-size:1.35rem}.md h2{font-size:1.15rem}.md h3{font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+.small{font-size:.8rem}
+</style>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>היומן המכווץ בקוד</h1><div class="sub"><span class="mute">yad-sarah/eff/slim/journal-slim.md</span> · 145 שורות</div><div class="md"><h1>יומן מכווץ בקוד — יד שרה (journal_slim.py, 0 טוקנים)</h1>
+<p><em>מקור: <code>/home/ubuntu/company/opus-run/yad-sarah/journal.md</code> · 2427 שורות → 140 ממצאים. שורה לממצא: מזהה · כותרת · דרגה · נכון ל- · תחילת הציטוט · מקור.</em></p>
+<table>
+<thead>
+<tr>
+<th>מזהה</th>
+<th>הממצא</th>
+<th>דרגה</th>
+<th>נכון ל-</th>
+<th>ציטוט (תחילה)</th>
+<th>מקור</th>
+<th>M</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>מ-001</td>
+<td>זהות רשמית ושנת ייסוד</td>
+<td>א</td>
+<td></td>
+<td>"סוג ארגון: עמותה · סטטוס: עמותה רשומה · מספר ארגון: 580030104 · שנת ייסוד: 1983"</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-002</td>
+<td>כתובת ופריסה</td>
+<td>א</td>
+<td></td>
+<td>"כתובת רשמית: שד הרצל, 124, ירושלים, 9618722 · אזור פעילות: פריסה ארצית"</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-003</td>
+<td>מצבת כוח אדם — מתנדבים מול שכירים</td>
+<td>א</td>
+<td>2024</td>
+<td>"מספר עובדים: 310 (2024) · מספר חברים: 12 (2024) · מספר מתנדבים: 5,000 (2024)"</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-004</td>
+<td>המחזור השנתי</td>
+<td>א</td>
+<td>2024</td>
+<td>"מחזור שנתי: 141,792,000 ₪ (2024)"</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-005</td>
+<td>פילוח מקורות המימון</td>
+<td>א</td>
+<td>2024</td>
+<td>"מקורות תקציביים: 141,792,000 ₪ (2024)</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-006</td>
+<td>תרומות בשווי כספי — כמעט רבע מהתקציב אינו כסף</td>
+<td>א</td>
+<td></td>
+<td>"תרומות בשווי כספי 31,949,000"</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-007</td>
+<td>תמיכות ממשלתיות — שנה אחרת</td>
+<td>א</td>
+<td>2025</td>
+<td>"תמיכות ממשלתיות: 9,754,728 ₪ (2025)"</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-008</td>
+<td>אישורים בתוקף</td>
+<td>א</td>
+<td></td>
+<td>"ניהול תקין (2026) · זיכוי ממס לתרומות · תוקף זיכוי תרומות ממס: 31/12/2026 · דיווחים שנתיים"</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-009</td>
+<td>הליכי פיקוח של רשם העמותות</td>
+<td>א</td>
+<td></td>
+<td>"תהליכי פיקוח / ביקורת עומק של רשם העמותות — המידע מוצג רק לגבי הליכי פיקוח</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-010</td>
+<td>תחום פעילות וקהל יעד</td>
+<td>א</td>
+<td></td>
+<td>"תחום פעילות: בריאות והצלת חיים - כללי · שירותי רווחה לאוכלוסיות שונות"</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-011</td>
+<td>יעדי הארגון לשנת 2025 — הפעילות חורגת מהשאלת ציוד</td>
+<td>א</td>
+<td></td>
+<td>"הפצת רעיון וביצוע \"אשפוז בית\" בכל הארץ, פיתוח והפעלת מכשיר ניטור לכל חולה</td>
+<td>https://www.guidestar.org.il/organization/580030104</td>
+<td>M1</td>
+</tr>
+<tr>
+<td>מ-012</td>
+<td>קטלוג הציוד — הקטגוריות בפועל</td>
+<td>ג</td>
+<td></td>
+<td>"אביזרי הליכה וניידות · אמבטיה ושירותים · אמהות ותינוקות · אשפוז בית ואביזרי</td>
+<td>https://yad-sarah.net/</td>
+<td>M2</td>
+</tr>
+<tr>
+<td>מ-013</td>
+<td>דגל אדום ל"בחינם" — קטגוריה בשם "ערכות למכירה"</td>
+<td>ג</td>
+<td></td>
+<td>"ערכות למכירה"</td>
+<td>https://yad-sarah.net/</td>
+<td>M2</td>
+</tr>
+<tr>
+<td>מ-014</td>
+<td>טלפון ומסלולי פעולה</td>
+<td>ג</td>
+<td></td>
+<td>"להתנדבות · לתרומות · *6444 · הזמנה מיידית"</td>
+<td>https://yad-sarah.net/</td>
+<td>M2</td>
+</tr>
+<tr>
+<td>מ-015</td>
+<td>נציגי יד שרה בוועדה — הארגון מוזמן כגורם מקצועי</td>
+<td>א</td>
+<td></td>
+<td>"יצחק במברגר - מנהל אגף יד שרה מסייעת, יד שרה"</td>
+<td>https://oknesset.org/meetings/2/2/2204942.html</td>
+<td>M3</td>
+</tr>
+<tr>
+<td>מ-016</td>
+<td>"123 הסניפים" — עדות עצמית שנאמרה בכנסת</td>
+<td></td>
+<td></td>
+<td>"שמי איציק במברגר. את \"יד שרה\" אני לא צריך להציג כי אני חושב שכולנו מכירים</td>
+<td>https://oknesset.org/meetings/2/2/2204942.html</td>
+<td>M3</td>
+</tr>
+<tr>
+<td>מ-017</td>
+<td>מה הארגון עושה מעבר להשאלה — מפי מנהליו</td>
+<td></td>
+<td></td>
+<td>"יש ב\"יד שרה\" מרפאה למניעת נפילות וערכה למניעת נפילות"</td>
+<td>https://oknesset.org/meetings/2/2/2204942.html</td>
+<td>M3</td>
+</tr>
+<tr>
+<td>מ-018</td>
+<td>תיאור השבר במערכת — מפי הארגון</td>
+<td></td>
+<td></td>
+<td>"בן-אדם שהיום יוצא מבית החולים, לרוב אנחנו לא יודעים שום דבר, אומרים לו:</td>
+<td>https://oknesset.org/meetings/2/2/2204942.html</td>
+<td>M3</td>
+</tr>
+<tr>
+<td>מ-019</td>
+<td>הכרה מצד גורם שלישי בישיבה</td>
+<td></td>
+<td></td>
+<td>"אנחנו נשמח לשתף פעולה כמובן גם עם \"בית בלב\" ועם ארגונים אחרים, כמו</td>
+<td>https://oknesset.org/meetings/2/2/2204942.html</td>
+<td>M3</td>
+</tr>
+<tr>
+<td>מ-020</td>
+<td>פרס ישראל תשנ"ד (1994)</td>
+<td>א</td>
+<td></td>
+<td>"שם \"יד שרה\" ¦ תחום תרומה מיוחדת לחברה ולמדינה"</td>
+<td>https://israel-prize.education.gov.il/israel-prize-recipients/tashnat-tashnag/</td>
+<td>M4</td>
+</tr>
+<tr>
+<td>מ-021</td>
+<td>מגבלת המקור — מה הוא לא נותן</td>
+<td>א</td>
+<td></td>
+<td></td>
+<td>https://israel-prize.education.gov.il/israel-prize-recipients/tashnat-tashnag/</td>
+<td>M4</td>
+</tr>
+<tr>
+<td>מ-022</td>
+<td>מגבלת קטלוג החיפוש של פרס ישראל</td>
+<td>א</td>
+<td></td>
+<td>"רשימת מקבלי פרס ישראל · חיפוש חופשי ברשימת הזוכים משנת תש\"ס 2000 עד היום"</td>
+<td>https://israel-prize.education.gov.il/israel-prize-recipients/tashnat-tashnag/</td>
+<td>M4</td>
+</tr>
+<tr>
+<td>מ-023</td>
+<td>מהות ההאשמה — השוחד ניתן כתרומות ליד שרה</td>
+<td>א</td>
+<td></td>
+<td>"לופוליאנסקי, שנשא בתפקידים בכירים בעיריית ירושלים, הואשם בכך שקיבל תרומות</td>
+<td></td>
+<td>M5</td>
+</tr>
+<tr>
+<td>מ-024</td>
+<td>הסכום והשנה</td>
+<td>א</td>
+<td></td>
+<td>"2006-2000 – מתן שוחד ללופוליאנסקי בדרך של מתן תרומות לארגון \"יד שרה\"</td>
+<td></td>
+<td>M5</td>
+</tr>
+<tr>
+<td>מ-025</td>
+<td>הכרעת בית המשפט העליון — ההרשעה עמדה, העונש הוקל</td>
+<td>א</td>
+<td></td>
+<td>"בנסיבות המקרה של לופוליאנסקי דעתי היא כי השפעת המאסר על מצבו הרפואי –</td>
+<td></td>
+<td>M5</td>
+</tr>
+<tr>
+<td>מ-026</td>
+<td>הנימוק לחריגה — מצב רפואי, לא חפות</td>
+<td>א</td>
+<td></td>
+<td>"למסקנה זו הגענו לאחר שעמדנו מן הצד האחד על חומרת העבירות שבהן הורשע</td>
+<td></td>
+<td>M5</td>
+</tr>
+<tr>
+<td>מ-027</td>
+<td>מה בית המשפט אמר על יד שרה כארגון — הניואנס המרכזי</td>
+<td>א</td>
+<td></td>
+<td>"בעניין זה ראינו לייחס משקל … לתרומתו לחברה )על דרך הקמת יד שרה( … בהקשר</td>
+<td></td>
+<td>M5</td>
+</tr>
+<tr>
+<td>מ-028</td>
+<td>נסיבות אישיות שנשקלו</td>
+<td>א</td>
+<td></td>
+<td>"לגילו של לופוליאנסקי, יליד 1951 … לעובדה כי לופוליאנסקי הוא אב ל-12 ילדים</td>
+<td></td>
+<td>M5</td>
+</tr>
+<tr>
+<td>מ-029</td>
+<td>שאלה פתוחה שהמקור אינו סוגר</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>M5</td>
+</tr>
+<tr>
+<td>מ-030</td>
+<td>מספרי ההשאלה — הנתון הכמותי הראשון שהושג</td>
+<td>ב</td>
+<td>2014</td>
+<td>"ב-2003 השאילה העמותה כ-170 אלף פריטים רפואיים לחולים, ועד 2014 זינק מספר</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-031</td>
+<td>שאר מספרי הפעילות</td>
+<td>ב</td>
+<td></td>
+<td>"גם מספר ביקורי הבית הוכפל בתוך עשור מכ-36 אלף ליותר מ–60 אלף ביקורי בית,</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-032</td>
+<td>מצבת סניפים ומתנדבים 2014 — והשוואה ל-2024</td>
+<td>ב</td>
+<td></td>
+<td>"יד שרה מפעילה 106 סניפים, מהם חמישה במגזר הערבי, ועובדים בה כ–6,000 מתנדבים."</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-033</td>
+<td>הקיצוץ בתמיכה הממשלתית — לפי משרד הבריאות</td>
+<td>א</td>
+<td></td>
+<td>[משרד הבריאות] "ב-2014 ירד תקציב התמיכות הכולל של המשרד מ–10.7 מיליון שקל</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-034</td>
+<td>טענת החיסכון למדינה — טענה לא ממוקרת</td>
+<td>ב</td>
+<td></td>
+<td>"העמותה, שחוסכת מאות מיליוני שקלים למדינה בימי אשפוז ובהוצאות רפואיות</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-035</td>
+<td>תשובה לק6.1 — מפי מנכ"ל העמותה</td>
+<td>ג</td>
+<td></td>
+<td>[משה כהן, מנכ"ל] "בכל בתי החולים יש סניף של יד שרה. בתי החולים מבינים</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-036</td>
+<td>שם המנכ"ל</td>
+<td>ב</td>
+<td>2014</td>
+<td>"מנכ\"ל העמותה, משה כהן"</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-037</td>
+<td>הקשר מערכתי — נתוני OECD</td>
+<td>ב</td>
+<td>2014</td>
+<td>"על פי נתוני OECD, בתי החולים בישראל הם הצפופים ביותר בקרב החברות בארגון,</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-038</td>
+<td>ערך חבילת אשפוז הבית</td>
+<td>ג</td>
+<td></td>
+<td>"אנחנו מספקים להם ציוד ביתי בשווי של כ–15 אלף דולר, שכולל מיטת בית חולים,</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-039</td>
+<td>מונח שאינו "השאלה"</td>
+<td>ב</td>
+<td></td>
+<td>"העמותה, שעוסקת ב<strong>השכרת</strong> ציוד רפואי, הסעות רפואיות ובשנים האחרונות גם</td>
+<td>https://www.themarker.com/news/health/2014-12-23/ty-article/0000017f-e025-d3a5-af7f-f2afc00f0000</td>
+<td>M6</td>
+</tr>
+<tr>
+<td>מ-040</td>
+<td>העובדה המרכזית</td>
+<td>ב</td>
+<td></td>
+<td>"תוצאתן הסופית היא שעמותת יד שרה )באמצעות חברה בת( היא הבעלים והמנהלת</td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-041</td>
+<td>ציר הזמן והמבנה התאגידי</td>
+<td>ב</td>
+<td></td>
+<td>"יד שרה החלה לבנות את המלון, ברחוב ירמיהו 33 בירושלים, ב־2016. בהיתר החפירה</td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-042</td>
+<td>המענקים הממשלתיים</td>
+<td>ב</td>
+<td></td>
+<td>"באותה שנה אושרה העברת סכום של 25.5 מיליון שקל על ידי מינהלת השקעות</td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-043</td>
+<td>ליבת הביקורת התכנונית</td>
+<td>ב</td>
+<td></td>
+<td>"התב\"ע … אינה מאפשרת בניית מלון. היא אושרה ב־1999, והשימושים המותרים בה</td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-044</td>
+<td>תגובת יד שרה</td>
+<td>ב</td>
+<td></td>
+<td>[משה כהן, מנכ\"ל יד שרה] "המלון משמש למחלימים וגם למי שרוצה לנפוש — הייחודיות</td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-045</td>
+<td>תגובת משרד התיירות — סותרת את התחקיר</td>
+<td>ב</td>
+<td></td>
+<td>[משרד התיירות] "הצוות המקצועי בדק את תנאי הסף בהתאם לנהלי המינהלת, לרבות</td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-046</td>
+<td>מה שהתחקיר עצמו זוקף לזכות הארגון</td>
+<td>ב</td>
+<td></td>
+<td>"עם זאת, ביד שרה דאגו להנגיש לנכים באופן מלא את כל חדרי המלון וחללים אחרים</td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-047</td>
+<td>מצבו של המייסד בפברואר 2025</td>
+<td>ב</td>
+<td></td>
+<td>"את תגובת לופוליאנסקי לא ניתן היה לקבל בשל מצבו הבריאותי."</td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-048</td>
+<td>הערכת שייכות למעש — החלטה מתודית שלי, לא ממצא</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.ynet.co.il/economy/article/bkv8gzjfjx</td>
+<td>M7</td>
+</tr>
+<tr>
+<td>מ-050</td>
+<td>סיפור הראשית — גרסה שנייה, שונה מהראשונה</td>
+<td>ב</td>
+<td></td>
+<td>"באמצע שנות השבעים הקים במשותף עם אשתו גמ\"ח קטן להשאלת **מכשירי אדים</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-051</td>
+<td>פער מול הרישום הרשמי</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-052</td>
+<td>⚠️ סתירה אמיתית: למי הוענק פרס ישראל</td>
+<td></td>
+<td></td>
+<td>"במהלך שנות פעילותה הארוכות זכתה העמותה בשלל פרסים ועיטורים, בהם גם</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-053</td>
+<td>⚠️ שלושה מספרי מתנדבים שונים</td>
+<td></td>
+<td></td>
+<td>"כיום פרוסה העמותה בלמעלה מ-100 סניפים בכל רחבי הארץ ובמסגרתה פועלים</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-054</td>
+<td>לופוליאנסקי לא לקח כסף לכיסו — מפי כתב האישום</td>
+<td>ב</td>
+<td></td>
+<td>"בניגוד למרבית הנאשמים האחרים בפרשה, כלפי לופוליאנסקי **לא נטען כי לקח</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-055</td>
+<td>דברי השופט רוזן על הזהות בין האיש לעמותה</td>
+<td>ב</td>
+<td></td>
+<td>[השופט דוד רוזן] "הנאשם לא מצא להבדיל בינו לבין עמותת \"יד שרה\". העצמת</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-056</td>
+<td>עדות המייסד על עצמו</td>
+<td>ב</td>
+<td></td>
+<td>"…פעם אגורה, יש לי הוראת קבע ליד שרה מהשנה שהיא קמה, זה מקום ההתנדבות שלי"</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-057</td>
+<td>גזר הדין במחוזי והסערה הציבורית</td>
+<td>ב</td>
+<td></td>
+<td>"לאחר שבהכרעת הדין מצא אותו השופט רוזן אשם במרבית סעיפי כתב האישום, גזר</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-058</td>
+<td>הקשר הכללי לפרשה</td>
+<td>ב</td>
+<td></td>
+<td>"בראשית ינואר 2012 … הגישה פרקליטות מחוז תל אביב כתב אישום … העמידה</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-059</td>
+<td>תפקידיו הציבוריים</td>
+<td>ב</td>
+<td></td>
+<td>"אורי לופוליאנסקי אשר שימש כסגנו [של אולמרט] במהלך כל התקופה ובהמשך אף</td>
+<td>https://www.maoz-il.org/wp-content/uploads/2020/02/אורי-לופוליאנסקי-חקר-מקרה-1.pdf</td>
+<td>M9</td>
+</tr>
+<tr>
+<td>מ-060</td>
+<td>שנת הקמה 1983 — חיזוק עצמאי</td>
+<td>ב</td>
+<td></td>
+<td>"שנת הקמה: 1983"</td>
+<td>https://www.kolzchut.org.il/he/יד_שרה</td>
+<td>M10</td>
+</tr>
+<tr>
+<td>מ-061</td>
+<td>פריסה — מעל 100 סניפים, חלקם בתוך בתי חולים</td>
+<td>ב</td>
+<td></td>
+<td>"הארגון מפעיל מעל ל-100 סניפים בפריסה ארצית, מקריית שמונה ועד אילת.</td>
+<td>https://www.kolzchut.org.il/he/יד_שרה</td>
+<td>M10</td>
+</tr>
+<tr>
+<td>מ-062</td>
+<td>מפת השירותים — 11 שירותים, לא רק השאלה</td>
+<td>ב</td>
+<td></td>
+<td>"השאלת ציוד רפואי-שיקומי · מרכז תצוגה וייעוץ · מוקד מצוקה · מרפאת שיניים</td>
+<td>https://www.kolzchut.org.il/he/יד_שרה</td>
+<td>M10</td>
+</tr>
+<tr>
+<td>מ-063</td>
+<td>מה שכל-זכות אינה אומרת — ושתיקתה משמעותית</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.kolzchut.org.il/he/יד_שרה</td>
+<td>M10</td>
+</tr>
+<tr>
+<td>מ-064</td>
+<td>המשפט שבו "חינם" ו"תשלום" יושבים בפסקה אחת</td>
+<td>ג</td>
+<td></td>
+<td>"שרותי יד שרה ניתנים ללא עלות כלל. המנוף נמסר בהשאלה ויש להשאיר ערבון</td>
+<td>https://yad-sarah.net/home_hospital/מנוף-הרמה/</td>
+<td>M11</td>
+</tr>
+<tr>
+<td>מ-065</td>
+<td>דמי השתתפות חודשיים — תשלום שאינו מוחזר</td>
+<td>ג</td>
+<td></td>
+<td>"היות ומנוף הרמה דורש תחזוקה רבה ובעת הצורך נדרש ביקור טכנאי, החלפת</td>
+<td>https://yad-sarah.net/home_hospital/מנוף-הרמה/</td>
+<td>M11</td>
+</tr>
+<tr>
+<td>מ-066</td>
+<td>עלויות הובלה ורכישה</td>
+<td>ג</td>
+<td></td>
+<td>"עלות משלוח לכל צד, הינו 300 ש\"ח בלבד. לכל פריט כבד נוסף, יש להוסיף</td>
+<td>https://yad-sarah.net/home_hospital/מנוף-הרמה/</td>
+<td>M11</td>
+</tr>
+<tr>
+<td>מ-067</td>
+<td>תנאי כניסה רפואי</td>
+<td>ג</td>
+<td></td>
+<td>"חובה לקבל הדרכה פיזיותרפיסט או ממרפא בעיסוק מהיחידה לטיפולי בית של קופ\"ח."</td>
+<td>https://yad-sarah.net/home_hospital/מנוף-הרמה/</td>
+<td>M11</td>
+</tr>
+<tr>
+<td>מ-068</td>
+<td>הכרעת ק2.3 — "בחינם" · מה מדויק ומה מטעה</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://yad-sarah.net/home_hospital/מנוף-הרמה/</td>
+<td>M11</td>
+</tr>
+<tr>
+<td>מ-069</td>
+<td>הציוד ברובו יד שנייה מתרומות</td>
+<td>ג</td>
+<td></td>
+<td>"שהציוד על פי רוב הוא ציוד יד שניה, המתקבל מתרומות מלקוחות. לעיתים הפריט</td>
+<td>https://yad-sarah.net/posts/lending-medical-and-rehabilitation-equipment/</td>
+<td>M12</td>
+</tr>
+<tr>
+<td>מ-070</td>
+<td>הציוד הייחודי מרוכז בחמישה מקומות בלבד</td>
+<td>ג</td>
+<td></td>
+<td>"במרכזי השירות של יד שרה בירושלים, יד שרה חיפה, יד שרה באר שבע,</td>
+<td>https://yad-sarah.net/posts/lending-medical-and-rehabilitation-equipment/</td>
+<td>M12</td>
+</tr>
+<tr>
+<td>מ-071</td>
+<td>טענת הארגון על קיצור אשפוז</td>
+<td>ג</td>
+<td></td>
+<td>"השאלת מיכשור רפואי מאפשרת פעמים רבות קיצור משך זמן האשפוז בבית החולים</td>
+<td>https://yad-sarah.net/posts/lending-medical-and-rehabilitation-equipment/</td>
+<td>M12</td>
+</tr>
+<tr>
+<td>מ-072</td>
+<td>הניסוח הרשמי של הארגון: "חינם … תמורת עירבון"</td>
+<td>ג</td>
+<td></td>
+<td>"סוגים שונים של מכשירים רפואיים-שיקומיים **מושאלים חינם לכל פונה,</td>
+<td>https://www.iai-gimlaim.org/wp-content/uploads/yad-sara1.pdf</td>
+<td>M13</td>
+</tr>
+<tr>
+<td>מ-073</td>
+<td>מי רשאי לשאול — ומה דורש הפניה</td>
+<td>ג</td>
+<td></td>
+<td>"מושאלים חינם <strong>לכל פונה</strong>"</td>
+<td>https://www.iai-gimlaim.org/wp-content/uploads/yad-sara1.pdf</td>
+<td>M13</td>
+</tr>
+<tr>
+<td>מ-074</td>
+<td>תמליל מלא — "יד שרה: הנתונים המלאים נחשפים", 1.10.2020</td>
+<td>ג</td>
+<td></td>
+<td>[0.0] "שבעה חודשים חלפו מאז פרצה הקורונה לחיינו, ועכשיו המספרים נחשפים."</td>
+<td>https://www.youtube.com/watch?v=gzvsyjayqIE</td>
+<td>M14</td>
+</tr>
+<tr>
+<td>מ-075</td>
+<td>הארגון סופר את גילו מאמצע שנות ה-70</td>
+<td>ג</td>
+<td></td>
+<td>"חנן בן ארי מודה מעומק הלב, לכל מתנדבי יד שרה, ובראשם הרב אורי</td>
+<td>https://www.youtube.com/watch?v=PXA3D4dX7Wk</td>
+<td>M14</td>
+</tr>
+<tr>
+<td>מ-076</td>
+<td>אין תמליל לסרטוני ההדרכה — ולכן אין ממצא מהם</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/channel/UC0FtgCvchixvQJFhXWxf7cg</td>
+<td>M14</td>
+</tr>
+<tr>
+<td>מ-077</td>
+<td>לא נפתח — התמלול נכשל פעמיים</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M15</td>
+</tr>
+<tr>
+<td>מ-078</td>
+<td>מה שכן נשלף — מטא-דאטה בלבד</td>
+<td>ד</td>
+<td></td>
+<td>[תיאור הסרטון] "<strong>כבר 44 שנה</strong> ש'יד שרה' היא אימפריה של חסד מבוקר ועד</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M15</td>
+</tr>
+<tr>
+<td>מ-079</td>
+<td>הכרעת "שתי השעונים" — סוף הסתירה בשנת ההקמה</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M15</td>
+</tr>
+<tr>
+<td>מ-080</td>
+<td>שלוש שאילתות חיפוש וידאו — כמעט הכול הוא הארגון על עצמו</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>M16</td>
+</tr>
+<tr>
+<td>מ-081</td>
+<td>סיפור הראשית מפי המייסד — הגרסה הישירה ביותר שיש</td>
+<td>ג</td>
+<td></td>
+<td>[122] "אני במקורי חיפאי. וחיפה היא עיר שהיא צמודה לים … אתה מרגיש את</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-082</td>
+<td>המשפט המכונן — "כמו שאנחנו משאילים חלב ולחם"</td>
+<td>ג</td>
+<td></td>
+<td>[201] "ואז דיברתי עם אשתי ואמרתי, אולי נקנה מכסף כיס, נקנה איזה שניים,</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-083</td>
+<td>האמבולנס בדלת</td>
+<td>ג</td>
+<td></td>
+<td>[225] "ואז … הגיע לפעמים אמבולנס, עם רופא ועם התינוק, שהרופא אמר, אני</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-084</td>
+<td>האב מכר את עסקיו ונתן את הכסף</td>
+<td>ג</td>
+<td></td>
+<td>[297] "אבי, זכרונו לברכה, אז הגיע לגיל 70. והוא היה <strong>סוחר</strong> … ואז הוא היה</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-085</td>
+<td>מספרי המייסד, 2021</td>
+<td>ג</td>
+<td></td>
+<td>[214] "רק להבין, ליד שרה היום יש <strong>67,000 מכשירי נשימה</strong>."</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-086</td>
+<td>המייסד: התפטרתי מיד שרה כשנכנסתי לפוליטיקה</td>
+<td>ג</td>
+<td></td>
+<td>[386] "ואני נכנסתי, נתבקשתי לעמוד בראשות … תוך חודש נבחרתי לעמוד</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-087</td>
+<td>אובדן אישי</td>
+<td>ג</td>
+<td></td>
+<td>[445] "פה <strong>הנכד</strong>, לא עלינו, נפטר. ופה <strong>בעלה של נכדה באסון במירון</strong>."</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-088</td>
+<td>מה הריאיון עדיין לא נותן</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-089</td>
+<td>עדכון לפער מספר 9 ולק7</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-090</td>
+<td>השלט התלוי על בניין יד שרה ברעננה, כפי שהוא נקרא בעין</td>
+<td>ג</td>
+<td></td>
+<td>לוגו יד שרה · <strong>"יד שרה"</strong> · <strong>"מכל הלב"</strong> · ספרה גדולה <strong>"40"</strong> ·</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-091</td>
+<td>ליד שנבדק ונדחה — "אבן נגף" ע"ש שרה לופוליאנסקי</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-092</td>
+<td>שעון רביעי, ושוב שונה</td>
+<td>ג</td>
+<td></td>
+<td>"כבר <strong>44 שנה</strong> ש'יד שרה' היא <strong>אימפריה של חסד</strong> מבוקר ועד ערב.</td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-093</td>
+<td>לקח שמשנה איך אני עובד</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-094</td>
+<td>שבע עבירות ושבע תרומות</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-095</td>
+<td>שלושה אירועי ענישה, ולא אחד</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-096</td>
+<td>זיכוי מאישום נוסף</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-097</td>
+<td>"לא נטען כי נטל מהן לכיסו" — מפסק הדין עצמו</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-098</td>
+<td>שיקולי הענישה לפי סעיף 40יא</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-099</td>
+<td>ההמשך של רוזן</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-100</td>
+<td>עמוד ההשאלה הכללי</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-101</td>
+<td>אף מקור אינו אומר שהפיקדון מוחזר</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-102</td>
+<td>היקף המשפט על ציוד יד שנייה</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-103</td>
+<td>TheMarker — מקור הנתונים והסתירה הפנימית</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-104</td>
+<td>מקבל נוסף באותו תחום ובאותה שנה</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-105</td>
+<td>שני מקורות מייחסים את הפרס לאדם</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-106</td>
+<td>סייגי היקף ותשלום בעלון ובקטלוג</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-107</td>
+<td>פרוטוקול הוועדה — הנושא, המוזמנים, והניסוח של הדובר</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-110</td>
+<td>ספירות נוספות באותו ריאיון</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-111</td>
+<td>תצלום 1 ברזולוציה מלאה</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-112</td>
+<td>תצלום 4 ברזולוציה מלאה</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-113</td>
+<td>תצלום 3 ברזולוציה מלאה</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-115</td>
+<td>הפסקה של מעוז אינה ממוקרת</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-108</td>
+<td>תיקון למ-075.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-109</td>
+<td>תיקון למ-081.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-114</td>
+<td>תיקון למ-020 (הערת מקור 8 בדף הישן).</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://www.youtube.com/watch?v=ScWYJNWxLHM</td>
+<td>M17</td>
+</tr>
+<tr>
+<td>מ-116</td>
+<td>מקור השם "יד שרה" — הפער הפתוח מס' 1 נסגר</td>
+<td>ג</td>
+<td></td>
+<td>"באותה תקופה יצא אביו של אורי, ר' יעקב לופוליאנסקי לגמלאות. הוא ביקש</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/איך-זה-הכל-התחיל/`</td>
+<td>M19</td>
+</tr>
+<tr>
+<td>מ-117</td>
+<td>שם אשת המייסד — "מיכל"</td>
+<td>ג</td>
+<td></td>
+<td>"בשנת תשל\"ו (1976) עברו אורי ומיכל לופוליאנסקי לגור בירושלים."</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/איך-זה-הכל-התחיל/`</td>
+<td>M19</td>
+</tr>
+<tr>
+<td>מ-118</td>
+<td>שנת המעבר לירושלים והחורף הקשה</td>
+<td>ג</td>
+<td></td>
+<td>"בשנת תשל\"ו (1976) עברו אורי ומיכל לופוליאנסקי לגור בירושלים. החורף</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/איך-זה-הכל-התחיל/`</td>
+<td>M19</td>
+</tr>
+<tr>
+<td>מ-119</td>
+<td>המודעות שנתלו בשכונה — הסצנה המתועדת של הפתיחה</td>
+<td>ג</td>
+<td></td>
+<td>"כשהחלטנו, רעייתי מיכל ואני לפתוח גמ\"ח להשאלת אינהלטורים ומכשירי אדים</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-120</td>
+<td>נוסח המודעה — המטרה שלא השתנתה</td>
+<td>ג</td>
+<td></td>
+<td>"המטרה נשארה בדיוק כפי שהיא פורסמה במודעות הרחוב בשכונה:</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-121</td>
+<td>ספירה עצמית חמישית</td>
+<td>ג</td>
+<td></td>
+<td>"היום, <strong>כארבעה עשורים</strong> לאחר פתיחת הסניף הקטן (כמובן שאז לא קראנו לזה סניף)"</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-122</td>
+<td>טענת היקף שאינה נכנסת</td>
+<td>ג</td>
+<td></td>
+<td>"מאות אלפי איש שותפים לתרומה ולהתנדבות"</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-123</td>
+<td>⚠️ פער בין שתי גרסאות סיפור האב</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-124</td>
+<td>ליד מ-091 נבדק מחדש</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-125</td>
+<td>שני פערים שנבדקו מחדש ולא נסגרו</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-126</td>
+<td>שיעור אי-החזרת הציוד — בדיקה שלילית, מתועדת ומתוארכת</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-127</td>
+<td>שני מסמכי ה-PDF נותרו בלי לינק ארכיון — ניסיון שמירה נכשל</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-128</td>
+<td>ליד שנראה ולא נלקח — "סיכום פעילות יד שרה לשנת 2025"</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-129</td>
+<td>סבב קריאה שני בתמליל הריאיון — שלושה תיקוני דיוק</td>
+<td>ג</td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-130</td>
+<td>פריט 14 — הציטוט שייך ל-<code>/lending/</code> ולא ל-<code>/equipment/</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-131</td>
+<td>י.ש.מ. — צילום הארכיון נפתח, ופריט 19 הצהיר שקר על עצמנו</td>
+<td></td>
+<td></td>
+<td>»שירות יש"ם הוקם על מנת לממש את חזון יד שרה«</td>
+<td>http://web.archive.org/web/20250904192439/https://www.yasam.co.il/about_h.php"`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-132</td>
+<td>תיקון למ-107 — ספירת בעלי התואר בפרוטוקול</td>
+<td>א</td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-133</td>
+<td>שבע התרומות כלשונן — הטווח שבדף היה שגוי בשני קצותיו</td>
+<td></td>
+<td></td>
+<td>»תרומה אחת, בסך <strong>1.25 מיליון ש"ח</strong>, נתרמה מצ'רני ליד שרה במהלך שנת</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-134</td>
+<td>פסקה 189 — »וזו לקיחת שוחד« אינו במקור, והקביעה היא של המחוזי</td>
+<td></td>
+<td></td>
+<td>»בהקשר אחרון זה אציין כי <strong>בית המשפט המחוזי</strong> הביא בחשבון את סגולותיו</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-135</td>
+<td>7,000 מתנדבים — »לא נמצא מקור שמסביר את הפער« נאמר מעל חומר</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-136</td>
+<td>שתי הצהרות ארכיון שגויות בשכבת המקורות</td>
+<td></td>
+<td></td>
+<td></td>
+<td>https://web.archive.org/web/20260822012850/…"`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-137</td>
+<td>בדיקה שלילית: »אין הכרעה שיפוטית« בפרשת המלון</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-138</td>
+<td>חצאי התחקיר שנשמרו מול אלה שהושמטו — פרשת המלון</td>
+<td>ב</td>
+<td></td>
+<td>»"ירמיהו 33", יש לציין, אכן מעניק הנחה למחלימים מניתוח, **אך אינו</td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-139</td>
+<td>תיקון למ-113 — »107 סניפים« אינו בתוך הספרה 0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-140</td>
+<td>מטא-דאטה של שני התצלומים שכיתוביהם היו בלי מזהה</td>
+<td>א</td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+<tr>
+<td>מ-141</td>
+<td>סייג שהוסר במקום אחד ונשמר במשנהו — TheMarker</td>
+<td>ב</td>
+<td></td>
+<td></td>
+<td>http://yad-sarah.net/אודות-יד-שרה/דבר-המייסד/`</td>
+<td>M20</td>
+</tr>
+</tbody>
+</table></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 04.09 23:43Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>

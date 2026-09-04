@@ -1,0 +1,42 @@
+<!doctype html><html lang="he" dir="rtl"><head><title>סעיף החופש — מה שונה בחברה</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--gold:#c9a84a;--ink:#1c1c1e;--mute:#6e6e73;--line:#e5e5ea;--bg:#f7f7f9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,system-ui,sans-serif;direction:rtl;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0 .3em;color:var(--navy)}h2{font-size:1.2rem;color:var(--navy);margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.2em}
+h3{font-size:1.02rem;margin:1.2em 0 .3em}
+.sub{color:var(--mute);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.summary{background:#fff;border-right:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff}th,td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;text-align:right}th{background:#fafafa;color:var(--navy);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+a{color:#0a4fa3;text-decoration:none}a:hover{text-decoration:underline}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;background:#eef2f8;color:var(--navy);margin-inline-start:4px}
+.ok{color:#1a7f37}.bad{color:#b42318}.warn{color:#b26a00}.mute{color:var(--mute)}
+nav{display:flex;gap:10px;flex-wrap:wrap;font-size:.9rem;margin:6px 0 14px}nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.md p{margin:.5em 0}.md blockquote{border-right:3px solid var(--gold);margin:.6em 0;padding:.2em 12px;color:#333;background:#fbfaf6}.md table{font-size:.85rem}
+.md h1{font-size:1.35rem}.md h2{font-size:1.15rem}.md h3{font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+.small{font-size:.8rem}
+</style>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>סעיף החופש — מה שונה בחברה</h1><div class="sub"><span class="mute">CHANGES.md</span> · 21 שורות</div><div class="md"><h1>סעיף החופש — מה שיניתי בחברה (5–6.9.2026)</h1>
+<p><em>כל שינוי: מה · למה · איך חוזרים אחורה. שום דבר לא נמחק.</em></p>
+<h2>1. רץ מעבדה חדש (<code>lab/lab_runner.sh</code>) לצד <code>night_runner.sh</code> (לא במקומו)</h2>
+<p><strong>מה:</strong> רץ בש טהור עם תור אחד ל-4 מסלולים, תלויות בין יחידות (קלט חסר = ממתין ונבדק שוב, לא נדחה), נפילת מודל לעבודת רקע (אופוס→סונט), רישום עלות אוטומטי לכל יחידה מהלדג'ר, ספירת ממצאי בודק אוטומטית, בניית דפים ופרסום אחרי כל יחידה.
+<strong>למה:</strong> night_runner דחה יחידה שהקלט שלה חסר עד ההפעלה הבאה — במעבדה עם תלויות בין מסלולים זה היה תוקע הכול. והעלות נרשמה רק ידנית (deed_cost.py).
+<strong>חזרה:</strong> <code>sudo systemctl stop 'maasei-lab@*'</code>; night_runner לא שונה.</p>
+<h2>2. שורת ספירה חובה לבודק (<code>COUNTS: חוסם=N לתיקון=N הערה=N | מחקר=N כתיבה=N הצגה=N</code>)</h2>
+<p><strong>מה:</strong> בתבנית משימת הבודק (lab/tasks/tmpl-check.md) — שורה אחרונה במבנה קבוע + סיווג שורש לכל ממצא (מחקר/כתיבה/הצגה).
+<strong>למה:</strong> תומר רוצה מספר שמכריע; עד היום ספרנו ביד. וסיווג השורש הוא בדיוק המדד ל"בלי בודק" — כמה מהשגיאות היה חוסך מחקר יסודי.
+<strong>חזרה:</strong> לא לכלול את השורה במשימות עתידיות. הקיר של הבודק (offices/slim-checker/WALL.md) לא שונה.</p>
+<h2>3. שני כלים של 0 טוקנים: <code>journal_slim.py</code> ו-<code>verify_quotes.py</code></h2>
+<p><strong>מה:</strong> כיווץ יומן לטבלה (שורה לממצא) · אימות כל ציטוט ומספר בדף מול הסנפשוטים.
+<strong>למה:</strong> רעיונות היעילות מ-19.8 (קבוצה א': אימות ציטוטים מכני) מעולם לא נבנו. עכשיו נמדדים.
+<strong>חזרה:</strong> קבצים ב-lab/tools; לא מחוברים לצנרת החיה.</p>
+<h2>4. דיווח בלי מודל</h2>
+<p><strong>מה:</strong> <code>~/.hermes/scripts/lab_status.sh</code> — קרון הרמס <code>--no-agent</code> כל 3 שעות: מה נגמר, מה רץ, כמה פלט.
+<strong>למה:</strong> דוח בוקר שנפל 3/4 בקרים (מכסה/קרדנציאלס) — דיווח שלא תלוי במכסה לא נופל איתה.</p></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 04.09 23:43Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>

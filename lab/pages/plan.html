@@ -1,0 +1,279 @@
+<!doctype html><html lang="he" dir="rtl"><head><title>תוכנית המעבדה</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--gold:#c9a84a;--ink:#1c1c1e;--mute:#6e6e73;--line:#e5e5ea;--bg:#f7f7f9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,system-ui,sans-serif;direction:rtl;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0 .3em;color:var(--navy)}h2{font-size:1.2rem;color:var(--navy);margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.2em}
+h3{font-size:1.02rem;margin:1.2em 0 .3em}
+.sub{color:var(--mute);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.summary{background:#fff;border-right:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff}th,td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;text-align:right}th{background:#fafafa;color:var(--navy);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+a{color:#0a4fa3;text-decoration:none}a:hover{text-decoration:underline}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;background:#eef2f8;color:var(--navy);margin-inline-start:4px}
+.ok{color:#1a7f37}.bad{color:#b42318}.warn{color:#b26a00}.mute{color:var(--mute)}
+nav{display:flex;gap:10px;flex-wrap:wrap;font-size:.9rem;margin:6px 0 14px}nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.md p{margin:.5em 0}.md blockquote{border-right:3px solid var(--gold);margin:.6em 0;padding:.2em 12px;color:#333;background:#fbfaf6}.md table{font-size:.85rem}
+.md h1{font-size:1.35rem}.md h2{font-size:1.15rem}.md h3{font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+.small{font-size:.8rem}
+</style>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>תוכנית המעבדה</h1><div class="sub"><span class="mute">PLAN.md</span> · 78 שורות</div><div class="md"><h1>מעבדת סוף השבוע — ניסויי השיטה על "יד שרה"</h1>
+<p><em>נכתב 5.9.2026 00:00Z ע"י הרמס (פייבל 5.1). הוראת תומר: 4.9 לילה (הודעת קלוד-PC). דדליין: ראשון 6.9 07:00Z (איפוס מכסה). דוח סופי עד 06:30Z.</em></p>
+<h2>המטרה במשפט</h2>
+<p>להביא לתומר ביום ראשון בבוקר השוואה שממנה הוא מכריע: <strong>איזו שיטת מחקר, איזה סגנון כתיבה, איזה כותב, ואם צריך בודק</strong> — על מעש אחד (יד שרה), עם מספר אחד שמכריע: כמה שגיאות נשארו לכל שיטה אחרי בודק עיוור.</p>
+<h2>למה יד שרה</h2>
+<p>שתי הגרסאות הקיימות (פייבל-קול 28.8, אופוס 29.8), יומן עשיר (137KB פייבל + 198KB אופוס שהוא על-קבוצה), ממצאי בודק לשתיהן, 2 תמלילי וידאו על הדיסק, וזה בדיוק המעש שבו נמדד "יוזמת מחקר" (מקור השם — שרה לופוליאנסקי).</p>
+<h2>מבנה התיקיות</h2>
+<pre><code>~/company/lab/
+  PLAN.md            ← המסמך הזה
+  queue.tsv          ← תור היחידות (הרץ קורא)
+  lab_runner.sh      ← רץ בש טהור, מסלול אחד לכל הפעלה (systemd maasei-lab@A..D)
+  state/             ← done-&lt;lane&gt;.txt · report.tsv · costs.tsv · counts.tsv · runner logs
+  tasks/             ← קובץ משימה לכל יחידה
+  tools/             ← journal_slim.py · verify_quotes.py · lab_pages.py · lab_status.sh · publish_lab.sh
+  sessions/          ← (לא בשימוש; ה-sid נשמרים ב-~/company/sessions/lab-yad-sarah/)
+  yad-sarah/
+    truth/           ← 01: ספר העובדות (F-xxx) מהיומנים + ממצאי הבודקים = &quot;האמת&quot;
+    research/A B C D ← ניסוי 1: ארבע שיטות מחקר, כל אחת ארגז חול עיוור
+    styles/          ← ניסוי 2: voice · engine · chronicle · feature — אותן עובדות
+    eff/             ← ניסוי 4: slim (יומן מכווץ בקוד) · oneshot (סבב אחד)
+    checks/          ← ניסוי 3: ממצאי הבודקים (fresh) לכל גרסה + ספירה
+    videos/ blocked/ converter/ design/
+  MANAGER-LOG.md     ← יומן המנהל (הרמס בקרונים)
+  SUMMARY.md         ← 10 השורות + ההמלצה (מתעדכן בכל ביקורת מנהל)
+  CHANGES.md         ← סעיף החופש: מה שיניתי בחברה, למה, איך חוזרים
+~/maasei-review/lab/ ← האתר: index.html · research.html · styles.html · costs.html · pages/*.html · design/
+</code></pre>
+<h2>הניסויים והיחידות (מספר = סדר עדיפות; המכריע קודם)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>יחידה</th>
+<th>מודל</th>
+<th>מסלול</th>
+<th>מה</th>
+<th>פלט</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>truth</td>
+<td>פייבל 5.1</td>
+<td>A</td>
+<td>ספר העובדות מהיומן המאוחד (2,427 שורות, בחלקים) + מה הבודקים הפריכו</td>
+<td>truth/ledger.md + ledger.json</td>
+</tr>
+<tr>
+<td>02</td>
+<td>research-A</td>
+<td>פייבל 5.1</td>
+<td>A</td>
+<td><strong>השיטה הנוכחית</strong>: שער+מחקר לפי קיר 2.1 עם 7 שאלות החובה (אותו טקסט משימה מ-22.8)</td>
+<td>research/A/journal.md</td>
+</tr>
+<tr>
+<td>03</td>
+<td>research-B</td>
+<td>פייבל 5.1</td>
+<td>B</td>
+<td><strong>אפס-אמון, ראשוני בלבד</strong>: רשם/גיידסטאר, כנסת, פס"ד, מבקר, פרס ישראל, עיתונות היסטורית, מסמכי הארגון בארכיון. כתבה = ליד, לא ראיה</td>
+<td>research/B/journal.md</td>
+</tr>
+<tr>
+<td>04</td>
+<td>research-C</td>
+<td>פייבל 5.1</td>
+<td>C</td>
+<td><strong>שאלות-קודם</strong>: 25 שאלות הקורא התם/תומר → מחקר לפי שאלה</td>
+<td>research/C/journal.md</td>
+</tr>
+<tr>
+<td>05–07</td>
+<td>write-A/B/C</td>
+<td>פייבל 5.1 (resume)</td>
+<td>A/B/C</td>
+<td>כתיבה בקול (קיר 2.1 שלבים ג-ה-ו) מהיומן של אותה שיטה, אותו סשן</td>
+<td>research/X/page.md</td>
+</tr>
+<tr>
+<td>08–10</td>
+<td>check-A/B/C</td>
+<td>פייבל 5.1 <strong>טרי</strong></td>
+<td>A/B/C</td>
+<td>הבודק העיוור, קיר 2.1 — סופר בלבד</td>
+<td>checks/A.md … + COUNTS</td>
+</tr>
+<tr>
+<td>11–12</td>
+<td>check-existing-fable / -opus</td>
+<td>פייבל 5.1 טרי</td>
+<td>B/A</td>
+<td>אותו בודק על שתי הגרסאות הקיימות (אחרי סבב התיקון שלהן) — מכריע ש-1</td>
+<td>checks/existing-fable.md …</td>
+</tr>
+<tr>
+<td>13</td>
+<td>check-A-opus · 13b check-A-sonnet</td>
+<td>אופוס 5 / סונט 5 טרי</td>
+<td>D</td>
+<td>ניסוי הבודק: מי מוצא מה על אותו דף</td>
+<td>checks/A-opus.md, A-sonnet.md</td>
+</tr>
+<tr>
+<td>14</td>
+<td>style-voice</td>
+<td>פייבל 5.1 טרי</td>
+<td>C</td>
+<td>קול פייגלין מ<strong>ספר העובדות</strong> (אותן עובדות לכל הסגנונות)</td>
+<td>styles/voice/page.md</td>
+</tr>
+<tr>
+<td>15</td>
+<td>style-engine</td>
+<td>פייבל 5.1 טרי</td>
+<td>C</td>
+<td>דוקטרינת המנוע: משפט מנוע, כל פסקה משרתת, ENGINE.md, "מה נשאר בחוץ"</td>
+<td>styles/engine/page.md</td>
+</tr>
+<tr>
+<td>16</td>
+<td>style-chronicle</td>
+<td>פייבל 5.1 טרי</td>
+<td>C</td>
+<td>כרוניקה יבשה, מתוארכת, בלי רטוריקה</td>
+<td>styles/chronicle/page.md</td>
+</tr>
+<tr>
+<td>17</td>
+<td>style-feature</td>
+<td>פייבל 5.1 טרי</td>
+<td>C</td>
+<td><strong>מה שחסר לדעתי:</strong> כתבת מגזין — סיפור רציף אחד (הטריילר של עזר מציון כתקן)</td>
+<td>styles/feature/page.md</td>
+</tr>
+<tr>
+<td>18–21</td>
+<td>check-style-*</td>
+<td>פייבל 5.1 טרי</td>
+<td>B/C</td>
+<td>ספירה לכל סגנון</td>
+<td>checks/style-*.md</td>
+</tr>
+<tr>
+<td>22</td>
+<td>eff-slim</td>
+<td>פייבל 5.1 טרי</td>
+<td>A</td>
+<td><strong>קוד במקום סוכן</strong>: journal_slim.py מכווץ את היומן לטבלה (0 טוקנים) → כתיבה מהטבלה בלבד</td>
+<td>eff/slim/page.md</td>
+</tr>
+<tr>
+<td>23</td>
+<td>eff-oneshot</td>
+<td>פייבל 5.1 טרי</td>
+<td>B</td>
+<td><strong>סבב אחד</strong>: הדף בפרומפט אחד, בלי spec/selfcheck</td>
+<td>eff/oneshot/page.md</td>
+</tr>
+<tr>
+<td>24–25</td>
+<td>check-eff-*</td>
+<td>פייבל 5.1 טרי</td>
+<td>A/B</td>
+<td>ספירה</td>
+<td>checks/eff-*.md</td>
+</tr>
+<tr>
+<td>26</td>
+<td>verify-quotes</td>
+<td><strong>קוד</strong></td>
+<td>—</td>
+<td>verify_quotes.py על כל הדפים: ציטוט/מספר שלא נמצא בסנפשוטים — מול מה שהבודק תפס</td>
+<td>checks/quotes-*.txt</td>
+</tr>
+<tr>
+<td>27</td>
+<td>videos</td>
+<td>פייבל 5.1</td>
+<td>C</td>
+<td>3–5 הסרטונים הטובים, מדורגים, למה; מה יש תמליל; יוטיוב מה-VM אסור, פרוקסי נכשל</td>
+<td>videos/ranking.md</td>
+</tr>
+<tr>
+<td>28</td>
+<td>blocked</td>
+<td>אופוס 5 (→סונט)</td>
+<td>D</td>
+<td>מי חסם, מה עבד (Wayback/archive.today/מטמון), דוח קצר</td>
+<td>blocked/report.md</td>
+</tr>
+<tr>
+<td>29</td>
+<td>converter</td>
+<td>אופוס 5 (→סונט)</td>
+<td>D</td>
+<td>md2site.py: page.md → JSON שהאתר קורא (sections/infobox/images/videos/sources). dry-run בלבד. <strong>בלי DB, בלי push ל-maasei-israel</strong></td>
+<td>tools/md2site.py + converter/yad-sarah.json</td>
+</tr>
+<tr>
+<td>30</td>
+<td>design</td>
+<td>אופוס 5 (→סונט)</td>
+<td>D</td>
+<td>4 פריסות של אותו דף + דף אינדקס</td>
+<td>maasei-review/lab/design/</td>
+</tr>
+<tr>
+<td>31</td>
+<td>research-diff</td>
+<td>פייבל 5.1</td>
+<td>A</td>
+<td>מחקר א' מצא/החמיץ/הוסיף/טעה מול ספר העובדות — לכל שיטה</td>
+<td>research/compare.md + compare.json</td>
+</tr>
+<tr>
+<td>32</td>
+<td>research-D (רשות)</td>
+<td>פייבל 5.1</td>
+<td>B</td>
+<td><strong>תמלילים-קודם</strong>: מתחילים מהתמלילים שעל הדיסק, מחלצים טענות, מאמתים כל אחת</td>
+<td>research/D/journal.md</td>
+</tr>
+<tr>
+<td>—</td>
+<td>דפים</td>
+<td><strong>קוד</strong></td>
+<td>—</td>
+<td>lab_pages.py: index/research/styles/costs/pages — נבנה אחרי כל יחידה, מתפרסם ב-git</td>
+<td>maasei-review/lab/</td>
+</tr>
+</tbody>
+</table>
+<h2>חוקים לניסוי</h2>
+<ul>
+<li><strong>עיוורון:</strong> יחידות המחקר לא רואות את היומנים הקיימים ולא זו את זו. ארגז חול לכל אחת. הבודק תמיד סשן טרי.</li>
+<li><strong>אותו כותב לכל השיטות</strong> (פייבל 5.1, קיר 2.1 + קול) — כדי שההבדל במספר יהיה של המחקר, לא של הכותב.</li>
+<li><strong>אותן עובדות לכל הסגנונות</strong> (ספר העובדות + היומן המאוחד) — כדי שההבדל יהיה של הסגנון.</li>
+<li><strong>הספירה:</strong> הבודק מסיים בשורה <code>COUNTS: חוסם=N לתיקון=N הערה=N</code>. הקוד סופר גם לבד (כותרות) — שני המספרים מוצגים.</li>
+<li><strong>מודלים:</strong> פייבל 5.1 = מחקר, כתיבה, בדיקה, שיפוט. אופוס/סונט = רקע בלבד (ממיר, גלריה, דוח חסימות, בודק-השוואה). כל תוצר מסומן במודל.</li>
+<li><strong>חוקי הברזל של HANDOFF תקפים.</strong> כלום לא לאתר החי, כלום ל-DB, אין push ל-maasei-israel, לא מוחקים. maasei-review = מותר ורצוי.</li>
+<li><strong>YouTube לא מה-VM.</strong> המחשב של תומר מנותק עד ראשון. תמלילים = מה שעל הדיסק.</li>
+</ul>
+<h2>איך השרשרת ממשיכה לבד</h2>
+<ul>
+<li><code>lab_runner.sh &lt;lane&gt;</code> תחת systemd (<code>maasei-lab@A/B/C/D</code>), בש טהור, שורד מיצוי מכסה: יחידה שמתה → בדיקת מכסה במודל שלה → המתנה (בדיקה כל 8 דק', +10 דק' מרווח) → המשך <strong>אותה יחידה באותו סשן</strong>.</li>
+<li>יחידה שהקלט שלה חסר — מדולגת לפי שעה ונבדקת שוב (תלות בין מסלולים).</li>
+<li>מצב = קבצים: <code>state/done-&lt;lane&gt;.txt</code>, <code>state/report.tsv</code>, <code>state/costs.tsv</code> (מהלדג'ר), <code>state/counts.tsv</code>.</li>
+<li>דיווח: סקריפט (0 טוקנים) כל 3 שעות לטלגרם; ביקורות מנהל (הרמס) שבת 09:00Z, 19:00Z, ראשון 03:00Z — שיפוט, תיקון תור, עדכון SUMMARY.md; דוח סופי ראשון 05:35Z (+גיבוי סקריפט 06:25Z).</li>
+<li>דדליין שיגור יחידות חדשות: ראשון 05:00Z.</li>
+</ul>
+<h2>תקציב צפוי (פלט)</h2>
+<p>פייבל ≈ 5.5–6.5M · אופוס ≈ 0.7M · סונט ≈ 0.1M. סדר התור = סדר החשיבות, כך שאם המכסה נגמרת מוקדם — המכריע כבר על הדיסק.</p></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 04.09 23:43Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
