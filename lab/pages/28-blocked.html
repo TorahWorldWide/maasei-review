@@ -1,0 +1,236 @@
+<!doctype html><html lang="he" dir="rtl"><head><title>אתרים חוסמים</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--gold:#c9a84a;--ink:#1c1c1e;--mute:#6e6e73;--line:#e5e5ea;--bg:#f7f7f9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,system-ui,sans-serif;direction:rtl;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0 .3em;color:var(--navy)}h2{font-size:1.2rem;color:var(--navy);margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.2em}
+h3{font-size:1.02rem;margin:1.2em 0 .3em}
+.sub{color:var(--mute);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.summary{background:#fff;border-right:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff}th,td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;text-align:right}th{background:#fafafa;color:var(--navy);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+a{color:#0a4fa3;text-decoration:none}a:hover{text-decoration:underline}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;background:#eef2f8;color:var(--navy);margin-inline-start:4px}
+.ok{color:#1a7f37}.bad{color:#b42318}.warn{color:#b26a00}.mute{color:var(--mute)}
+nav{display:flex;gap:10px;flex-wrap:wrap;font-size:.9rem;margin:6px 0 14px}nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.md p{margin:.5em 0}.md blockquote{border-right:3px solid var(--gold);margin:.6em 0;padding:.2em 12px;color:#333;background:#fbfaf6}.md table{font-size:.85rem}
+.md h1{font-size:1.35rem}.md h2{font-size:1.15rem}.md h3{font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+.small{font-size:.8rem}
+</style>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>אתרים חוסמים</h1><div class="sub"><span class="mute">yad-sarah/blocked/report.md</span> · 83 שורות</div><div class="md"><h1>אתרים שחוסמים אותנו — מה נפתר ומה לא</h1>
+<p><strong>יחידה 28-blocked · 5.9.2026 · מעבדת יד שרה</strong>
+כל מספר כאן נמדד בריצה בפועל. הכלי החי לא נגע (<code>md5 2e452929…</code> ללא שינוי); התיקונים בעותק בלבד.</p>
+<h2>שתי הערות שמשנות את קריאת הדוח</h2>
+<ol>
+<li><strong>שדות המשימה אינם שדות הקובץ.</strong> המשימה מדברת על <code>layer</code>/<code>fetched_by</code>; ב-552 קובצי <code>meta.json</code> יש <strong>0 מופעים</strong> לשניהם. השם בפועל: <code>fetch_tier</code>.</li>
+<li><strong>המטמון אינו רישום ניסיונות אלא רישום הצלחות.</strong> <code>process()</code> כותב <code>meta.json</code> רק אחרי משיכה שהצליחה ולו חלקית; כתובת שכל השכבות נפלו עליה <strong>אינה מותירה תיקייה</strong>. לכן <code>scan.tsv</code> הוא "מה שנשמר", לא "מה שניסינו" — הכשלים המוחלטים חיים ביומנים (302 שורות).</li>
+</ol>
+<h2>המספרים (<code>scan.tsv</code>) — צילום מצב 5.9.2026 01:12 UTC</h2>
+<p><strong>המטמון חי וגדל תוך כדי:</strong> בתחילת המשמרת 556 תיקיות, ב-01:12 — 552 קובצי <code>meta.json</code>, ב-01:34 — <strong>582</strong>. יחידות אחרות מושכות מקורות ברגע זה. כל המספרים כאן הם צילום של 01:12; מי שיריץ <code>scan.py</code> מחדש יקבל מספרים גדולים יותר, וזה תקין. <strong>היחסים</strong> (≈21% ריקים, ≈55% ללא ארכיון) יציבים: ב-01:34 — 120/582 ו-311/582.
+552 מקורות · 189 דומיינים · 117 (21%) ריקים (&lt;400 תווים) · 132 נזקקו לדפדפן אמיתי · <strong>303 (55%) בלי לינק ארכיון</strong>.
+פילוח שכבות: <code>http</code> 394 · <code>real-browser</code> 132 · <code>tls-impersonate</code> 26.</p>
+<h2>הטבלה</h2>
+<table>
+<thead>
+<tr>
+<th>דומיין</th>
+<th>מה קורה</th>
+<th>מה ניסינו</th>
+<th><strong>מה עבד</strong></th>
+<th>המלצה</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>yad-sarah.net</strong></td>
+<td><strong>סגירת שבת</strong> — HTTP 503, »נחזור בצאת השבת« = 92 התווים הזהים</td>
+<td>ישיר · wayback</td>
+<td><strong>wayback לדף הבית — 6,041 ת' (200)</strong> · ישיר בחול</td>
+<td><strong>לא לחסום. למשוך בחול, או דרך ארכיון בשבת</strong></td>
+</tr>
+<tr>
+<td><strong>yadsarah.org.il</strong></td>
+<td>TLS מת לגמרי (<code>curl -k</code> → 000); דומיין נטוש</td>
+<td>ישיר · web/2 · archive.today · jina</td>
+<td><strong>wayback בחותמת מפורשת</strong> (1997→2018)</td>
+<td>ארכיון בלבד; <strong>התוכן החי נמצא ב-yad-sarah.net</strong></td>
+</tr>
+<tr>
+<td><strong>cbs.gov.il</strong> (PDF)</td>
+<td>PDF ירד תקין, הכלי חילץ 0</td>
+<td>ישיר בינרי + pdftotext</td>
+<td><strong>ישיר — 34,769 ת'</strong></td>
+<td>תיקון בכלי (ת-1). לא היה חסום מעולם</td>
+</tr>
+<tr>
+<td><strong>gov.il</strong> (PDF)</td>
+<td>כנ"ל</td>
+<td>ישיר בינרי</td>
+<td><strong>ישיר — 10,134 ת'</strong></td>
+<td>כנ"ל. Cloudflare חוסם HTML, <strong>לא</strong> PDF</td>
+</tr>
+<tr>
+<td><strong>iai-gimlaim.org</strong> (PDF)</td>
+<td>כנ"ל, מסמך יד שרה</td>
+<td>ישיר בינרי</td>
+<td><strong>ישיר — 8,501 ת'</strong></td>
+<td>כנ"ל</td>
+</tr>
+<tr>
+<td><strong>timesofisrael.com</strong></td>
+<td>403; 121 תווים זהים בכל הכתובות</td>
+<td>ישיר · wayback</td>
+<td><strong>wayback — 33,041 ת'</strong></td>
+<td>ארכיון כברירת מחדל</td>
+</tr>
+<tr>
+<td><strong>ami.org.il</strong></td>
+<td>403; 222 תווים זהים</td>
+<td>ישיר · wayback</td>
+<td><strong>wayback — 8,755 ת'</strong></td>
+<td>ארכיון</td>
+</tr>
+<tr>
+<td><strong>nli.org.il</strong></td>
+<td>403 בכל שכבה</td>
+<td>ישיר · wayback · jina · amp</td>
+<td><strong>wayback — 1,159 ת'</strong> (דל)</td>
+<td>ארכיון; עיתונות היסטורית — לוותר מהשרת</td>
+</tr>
+<tr>
+<td><strong>haaretz.co.il</strong></td>
+<td>קיר תשלום (520 ת' במטמון)</td>
+<td>ישיר</td>
+<td>ישיר — 3,508 ת' <strong>גולמי, לא מאומת ככתבה</strong></td>
+<td>לאמת ידנית לפני ציטוט</td>
+</tr>
+<tr>
+<td><strong>patents.google.com</strong></td>
+<td>143 ת' זהים בדפי <code>?query</code>/<code>xhr</code></td>
+<td>ישיר לדף פטנט</td>
+<td><strong>ישיר — 72,947 ת'</strong></td>
+<td>לפנות לדף פטנט קונקרטי, לא לחיפוש</td>
+</tr>
+<tr>
+<td><strong>guidestar.org.il</strong></td>
+<td>שלד JS — 332 ת' בכל שיטה</td>
+<td>ישיר · wayback · amp · <strong>API פנימי</strong></td>
+<td><strong>כלום.</strong> API → <code>302 /login</code></td>
+<td><strong>המחשב של תומר / הורדה ידנית</strong></td>
+</tr>
+<tr>
+<td><strong>ezermizion.org.il</strong></td>
+<td>ConnectionError בכל שיטה</td>
+<td>ישיר · wayback · archive.today · jina · amp</td>
+<td><strong>כלום</strong></td>
+<td>לוותר מהשרת; <code>.org</code> האנגלי כן עובד</td>
+</tr>
+<tr>
+<td><strong>beta.hebrewbooks.org</strong></td>
+<td>403; 77 ת' זהים</td>
+<td>5 שיטות</td>
+<td><strong>כלום</strong></td>
+<td>לוותר; לעבור ל-hebrewbooks.org הרגיל</td>
+</tr>
+<tr>
+<td><strong>legifrance.gouv.fr</strong></td>
+<td>403; 235 ת' זהים</td>
+<td>5 שיטות</td>
+<td><strong>כלום</strong></td>
+<td>לוותר מהשרת</td>
+</tr>
+<tr>
+<td><strong>unesdoc.unesco.org</strong></td>
+<td>403</td>
+<td>5 שיטות</td>
+<td><strong>כלום</strong></td>
+<td>לוותר; לחפש את המסמך במראה אחרת</td>
+</tr>
+<tr>
+<td><strong>YouTube</strong></td>
+<td>—</td>
+<td><strong>לא ננסה מהשרת</strong> (IP נכס לא-מתחדש)</td>
+<td>—</td>
+<td>המחשב של תומר, אחרי יום ראשון</td>
+</tr>
+</tbody>
+</table>
+<p><strong>שתי מדרגות בסולם שבמשימה מתות מהשרת הזה:</strong> <code>archive.today</code> — <code>ConnectionError</code> ב-<strong>15/15</strong>; <code>r.jina.ai</code> — <code>HTTP 403</code> ב-<strong>15/15</strong> (תמיד 58 ת'). נותרו: הכלי · Wayback · PDF ישיר.
+<strong><code>web/2/&lt;url&gt;</code> שבור</strong> — מחזיר HTTP 409 ומייצר "אין ארכיון" כוזב. חייבים חותמת מפורשת מ-CDX.</p>
+<h2>הליקוי החמור ביותר שנמצא — והוא לא חסימה</h2>
+<p>הכלי <strong>הורס כל קובץ בינרי בשמירה.</strong> <code>fetch_plain</code> מחזיר <code>r.text</code>, ו-<code>process()</code> כותב <code>open(raw.html,"w",encoding="utf-8")</code>. מדידה על <code>maoz-il.org_db50d821b8/raw.html</code>: <strong>62,005 מופעי U+FFFD</strong> + 752 בתי NUL. הכותרת (<code>%PDF</code>) והטריילר שורדים כי הם ASCII; כל זרם flate מת.
+24 כתובות PDF במטמון, 22 מהן &lt;400 תווים — <strong>21 מהן ירדו בהצלחה מלאה.</strong> מעולם לא הייתה כאן בעיית חסימה.
+<strong>שתי נגזרות מעבר לתיקון:</strong>
+- אף PDF במטמון אינו ניתן לשחזור ממנו — חייבים משיכה מחדש.
+- <code>sha1</code> חושב על הטקסט המשובש. כלומר <strong>הסנפשוט שאמור לשמש ראיה לבודק העובדות משובש לכל מקור בינרי</strong> — ליקוי ח-1/ח-2, לא ליקוי נוחות.</p>
+<h2>כשל הארכוב — 55% מהמקורות, וברובו אינו כשל של האתרים</h2>
+<p>פילוח 295 ה-<code>archive_failed</code>: <code>HTTP 520</code>×144 · <code>500</code>×57 · <code>523</code>×42 · <code>ReadTimeout</code>×24 · <code>429</code>×16 · <code>404</code>×3 · <code>503</code>×2. 520/523 הן שגיאות Cloudflare של web.archive.org עצמו; 429 = הגבלת קצב עלינו. <strong>244 מ-295 נרשמו ביום אחד — 22.8.2026.</strong>
+מדגם אקראי של 25 כתובות מסומנות <code>archive_failed</code>, שנבדקו היום: <strong>ל-7 מהן יש עותק Wayback</strong>. עוד 49 מ-295 היו ניסיון לארכב כתובת שהיא כבר ארכיון, ו-36 היו שאילתות חיפוש/API שאינן מקור לציטוט.
+⇒ <code>archive_failed</code> במטמון פירושו <strong>"לא ארכבנו באותו רגע"</strong>, לא "אין ארכיון". אין להסיק ממנו היעדר.</p>
+<h2>שתי מלכודות שמייצרות מספרים מומצאים מטקסט שחולץ נכון</h2>
+<ol>
+<li><strong>PDF עברי ב-pdftotext:</strong> הספרות מתהפכות. במסמך יד שרה כתוב <code>051 סוגים שונים</code> — הכוונה <strong>150</strong>; וכן <code>077</code>=770, <code>071</code>=170. לא <code>-layout</code>, לא <code>-raw</code> ולא ברירת המחדל מתקנים (<code>-raw</code> גם משבש סדר מילים).</li>
+<li><strong>דף עברי ישן בארכיון (1997):</strong> <code>utf-8</code> נכשל לגמרי; <code>cp1255</code> מפענח — אך הטקסט בסדר <strong>ויזואלי הפוך</strong>: <code>"הרש די יפינס"</code> הוא <code>"סניפי יד שרה"</code>.
+<strong>אין לקחת מספר משתי הצורות האלה בלי אימות מול הדף המצויר.</strong></li>
+</ol>
+<h2>התיקון שנכתב (<code>source_tool_patch.py</code> + <code>source_tool_patch.diff</code>, 294 שורות)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>תיקון</th>
+<th>אימות בפועל</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ת-1</td>
+<td>בינרי נשמר כבתים ל-<code>raw.pdf</code>, מחולץ ב-<code>pdftotext -layout</code>; <code>sha1</code> על הבתים האמיתיים</td>
+<td>PDF יד שרה: <strong>0 → 11,931 תווים</strong>; <code>%PDF-1.5</code>, <strong>0 מופעי U+FFFD</strong></td>
+</tr>
+<tr>
+<td>ת-2</td>
+<td><code>smart_decode</code> — בוחר קידוד לפי מספר אותיות עבריות (cp1255 לדפים ישנים)</td>
+<td>1997: מוג'יבייק → 494 אותיות עבריות</td>
+</tr>
+<tr>
+<td>ת-3</td>
+<td>נפילה אוטומטית ל-Wayback בחותמת מ-CDX (לא <code>web/2/</code>), <strong>+ דחיית עטיפת Internet Archive</strong></td>
+<td>ראו למטה</td>
+</tr>
+<tr>
+<td>ת-4</td>
+<td>לא מארכבים כתובת-ארכיון (49) ולא שאילתות (36); חזרה על 429/5xx; הניסוח <code>archive_pending</code> במקום <code>archive_failed</code></td>
+<td>מבטל 85 מ-295 ה"כשלים"</td>
+</tr>
+<tr>
+<td>—</td>
+<td><code>number_warning</code> אוטומטי על כל PDF עברי עם ספרות</td>
+<td>נכתב ל-<code>meta.json</code> בריצת המבחן</td>
+</tr>
+</tbody>
+</table>
+<p><strong>מלכודת שלישית מאותה משפחה — ותיקון לטבלה שלי:</strong> בריצת <code>probe.py</code> רשמתי ל-yad-sarah.net "wayback 3,954 תווים" וסימנתי הצלחה. בבדיקה חוזרת: אלה 3,954 תווים של <strong>דף ה-404 של יד שרה עצמו</strong> (»העמוד לא נמצא«), 2,393 אותיות עבריות — כי <code>/about/</code> אינו קיים באתר כלל. דף הבית האמיתי מחזיר 6,041 תווים ו-HTTP 200. <strong>הסף של <code>probe.py</code> (1,500 תווים) היה מאשר את דף ה-404</strong>; ספירת תווים אינה מאמתת שקיבלנו את הדף המבוקש. אותו כשל בדיוק — בשלוש צורות: דף שבת (92), עטיפת ארכיון (1,206), דף 404 (3,954).</p>
+<p><strong>על ת-3 — ממצא שראוי לתשומת לב:</strong> בגרסה ראשונה הנפילה ל-Wayback "הצליחה" והחזירה 1,206 תווים — שהיו <strong>הטקסט של Internet Archive עצמו</strong> ("Alexa Internet has been donating…"), עם <code>published: 1996-01-01</code>. עובד היה מצטט את זה כדף הבית של יד שרה. הוספתי דחייה של ניסוחי העטיפה, וכעת הכלי <strong>מדווח כישלון</strong> על yadsarah.org.il במקום להחזיר זבל. זה הכישלון השקט שההסלמה-לפי-אורך נבנתה נגדו — והוא חזר דרך הדלת האחורית של הארכיון.</p>
+<h2>חמש שורות מסקנה</h2>
+<ol>
+<li><strong>רוב מה שנרשם כ"חסום" לא היה חסום.</strong> גוש ה-PDF (21 מסמכים, ובהם שניים של יד שרה) ירד תקין ונהרס אצלנו; זו בעיית קוד, לא בעיית גישה.</li>
+<li><strong>"האתר חוסם" ו"האתר סגור בשבת" נראים זהים בלוג.</strong> yad-sarah.net מחזיר 503 של שבת; 92 התווים החוזרים הם דף הסגירה. <strong>המעבדה רצה בשבת — האתר של המעש הנחקר סגור עד ~20:41 שעון ישראל.</strong> כל יחידה שתמשוך אותו היום ישירות תרשום "חסום" בטעות; העקיפה היא Wayback.</li>
+<li><strong>אבודים באמת מהשרת</strong> (5 מתוך 16): guidestar (API מאחורי <code>/login</code>), ezermizion.org.il, beta.hebrewbooks, legifrance, unesdoc — ועיתונות היסטורית (nli/jpress). אלה למחשב של תומר, לא לניסיון נוסף מכאן.</li>
+<li><strong><code>archive_failed</code> אינו טענת היעדר.</strong> 85 מ-295 היו מיותרים מלכתחילה, 244 נרשמו בתקלת יום אחד, ו-7 מתוך מדגם 25 מאורכבים בפועל היום. מי שיסיק מהשדה הזה "אין ארכיון" יטעה.</li>
+<li><strong>מה שווה לתקן בכלי, לפי סדר:</strong> ת-1 (בינרי — גם ליקוי ראיה, לא רק חילוץ) · ת-3 עם דחיית עטיפת הארכיון · ת-4 · ת-2. שלוש הראשונות הפכו כאן כישלונות להצלחות מדודות.</li>
+</ol>
+<h2>נשאר פתוח</h2>
+<ul>
+<li><strong>פ-1:</strong> ה-<code>sha1</code> של כל מקור בינרי במטמון החי שגוי. לא נגעתי במטמון — <strong>החלטה לתומר:</strong> משיכה מחדש של 24 ה-PDF, או סימון בלבד.</li>
+<li><strong>פ-2:</strong> ת-3 נבדק על שני אתרים. לפני הטמעה בכלי החי — ריצה על 10–15.</li>
+<li><strong>פ-3:</strong> <code>haaretz</code> החזיר 3,508 תווים גולמיים; לא אומת שזו הכתבה ולא התקציר.</li>
+<li><strong>פ-4:</strong> לא נבדק אם yad-sarah.net מגיש הכול אחרי צאת השבת (20:41) — בדיקה של 3 דקות במוצ"ש.</li>
+</ul>
+<p><strong>קבצים:</strong> <code>scan.py</code> · <code>scan.tsv</code> · <code>probe.py</code> · <code>probe.tsv</code> · <code>findings.md</code> · <code>source_tool_patch.py</code> · <code>source_tool_patch.diff</code> · <code>testout/</code> · <code>journal.md</code></p></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 05.09 01:36Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
