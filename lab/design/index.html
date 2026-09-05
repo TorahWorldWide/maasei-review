@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fbfbfd">
+<title>גלריית עיצוב — יד שרה · 4 פריסות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --navy:#0a1f3d; --navy-2:#14355e; --gold:#b08d4f; --gold-soft:#d9c8a4;
+ --ink:#1d1d1f; --ink-2:#3f3f45; --mute:#86868b;
+ --line:#e7e7ec; --bg:#fbfbfd; --paper:#fff; --silver:#f4f4f7;
+ --read:40rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);direction:rtl;
+ font-family:Assistant,"Heebo",system-ui,-apple-system,"Segoe UI",sans-serif;
+ font-size:clamp(1.04rem,.98rem + .32vw,1.16rem); font-weight:400; line-height:1.85;
+ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+a{color:var(--navy-2);text-decoration:none}
+a:hover{color:var(--gold)}
+h1,h2,h3{font-family:"Frank Ruhl Libre",Assistant,serif;font-weight:700;color:var(--navy);
+ line-height:1.28;letter-spacing:-.01em;margin:0}
+.wrap{max-width:74rem;margin:0 auto;padding:0 clamp(18px,5vw,40px)}
+.read{max-width:var(--read);margin-inline:auto}
+
+/* ---- סרגל הפריסות (מעבדה, לא חלק מהדף) ---- */
+.labbar{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.82);
+ backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);
+ border-bottom:1px solid var(--line);font-size:.8rem;font-family:Heebo,sans-serif}
+.labbar .in{max-width:74rem;margin:0 auto;padding:9px clamp(18px,5vw,40px);
+ display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.labbar b{color:var(--navy);font-weight:600;margin-inline-end:6px;letter-spacing:.01em}
+.labbar a{color:var(--mute);padding:2px 9px;border-radius:999px;border:1px solid transparent}
+.labbar a:hover{color:var(--navy);background:var(--silver)}
+.labbar a.on{color:var(--navy);border-color:var(--line);background:var(--paper)}
+.labbar .sp{flex:1}
+
+/* ---- כותרת הדף ---- */
+.kicker{font-family:Heebo,sans-serif;font-size:.76rem;letter-spacing:.16em;font-weight:500;
+ color:var(--gold);text-transform:none;margin:0 0 14px}
+h1.title{font-size:clamp(1.95rem,1.35rem + 2.6vw,3.1rem);letter-spacing:-.022em}
+
+/* ---- טריילר ---- */
+.trailer{margin:26px 0 0}
+.trailer .t{font-size:1.06em;line-height:1.8;color:var(--ink-2)}
+.trailer .t p{margin:0}
+.trailer:not(.open) .t{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;
+ overflow:hidden;position:relative}
+.more{margin-top:16px;font-family:Heebo,sans-serif;font-size:.86rem;font-weight:500;
+ color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:999px;
+ padding:8px 20px;cursor:pointer;letter-spacing:.01em}
+.more:hover{border-color:var(--gold-soft);color:var(--gold)}
+
+/* ---- גוף ---- */
+.sec{margin:0 0 clamp(38px,6vw,64px)}
+.sec h2{font-size:clamp(1.3rem,1.1rem + .8vw,1.72rem);margin:0 0 .55em}
+h2 .n{font-family:Heebo,sans-serif;font-size:.6em;font-weight:500;color:var(--gold);
+ margin-inline-end:.6em;vertical-align:.12em;letter-spacing:.04em}
+.sec p{margin:0 0 1.05em}
+.sec p:last-child{margin-bottom:0}
+
+/* ---- תמונות ---- */
+figure{margin:0}
+.ph{display:block;width:100%;position:relative;background:var(--silver);border-radius:14px;
+ overflow:hidden;border:1px solid var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.ratio{aspect-ratio:3/2}
+figcaption{font-size:.83rem;line-height:1.65;color:var(--ink-2);margin-top:10px;
+ font-family:Heebo,sans-serif;font-weight:300}
+figcaption .cr{display:block;color:var(--mute);font-size:.94em;margin-top:4px}
+
+/* ---- קופסאות ---- */
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;
+ padding:clamp(20px,3.6vw,32px)}
+h2.band{font-size:clamp(1.2rem,1.05rem + .6vw,1.5rem);margin:0 0 .2em}
+.band-sub{font-family:Heebo,sans-serif;font-size:.85rem;color:var(--mute);font-weight:300;margin:0 0 20px}
+.rule{height:1px;background:var(--line);border:0;margin:clamp(44px,7vw,76px) 0}
+
+/* ---- מה הדף אינו יודע ---- */
+.unknown{background:linear-gradient(180deg,#fdfcf9,#fbfbfd);border:1px solid #efe8da}
+.unknown ol{margin:0;padding-inline-start:0;list-style:none;counter-reset:u}
+.unknown li{counter-increment:u;position:relative;padding-inline-start:2.1em;
+ margin:0 0 .85em;font-size:.94em;line-height:1.75;color:var(--ink-2)}
+.unknown li:last-child{margin-bottom:0}
+.unknown li strong{font-weight:600;color:var(--navy)}
+.unknown li::before{content:counter(u);position:absolute;inset-inline-start:0;top:.28em;
+ font-family:Heebo,sans-serif;font-size:.72rem;font-weight:500;color:var(--gold);
+ width:1.5em;height:1.5em;line-height:1.5em;text-align:center;
+ border:1px solid var(--gold-soft);border-radius:50%}
+
+/* ---- סרטון ---- */
+.video{display:flex;gap:18px;align-items:flex-start}
+.play{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:var(--navy);
+ display:grid;place-items:center;margin-top:2px}
+.play::before{content:"";border-style:solid;border-width:9px 0 9px 14px;
+ border-color:transparent transparent transparent #fff;margin-inline-start:3px}
+.video h3{font-size:1.04rem;margin:0 0 6px}
+.video p{margin:0 0 10px;font-size:.92em;color:var(--ink-2)}
+.vlink{font-family:Heebo,sans-serif;font-size:.85rem;font-weight:500}
+.note{font-size:.83rem;color:var(--mute);font-family:Heebo,sans-serif;font-weight:300;
+ line-height:1.7;margin:18px 0 0}
+
+/* ---- מקורות ---- */
+.sources{margin:0;padding:0;list-style:none;counter-reset:s}
+.sources li{counter-increment:s;position:relative;padding:20px 0;
+ padding-inline-start:3.1em;border-top:1px solid var(--line)}
+.sources li:first-child{border-top:0;padding-top:4px}
+.sources li::before{content:counter(s);position:absolute;inset-inline-start:0;top:1.45em;
+ font-family:Heebo,sans-serif;font-size:.74rem;font-weight:500;color:var(--navy);
+ width:2em;height:2em;line-height:2em;text-align:center;background:var(--silver);border-radius:50%}
+.sources li:first-child::before{top:.15em}
+.src-t{font-weight:600;font-size:.97em;line-height:1.6;color:var(--navy)}
+.src-q{margin:8px 0 0;padding-inline-end:0;padding-inline-start:14px;
+ border-inline-start:2px solid var(--gold-soft);
+ font-size:.89em;line-height:1.72;color:var(--ink-2);font-weight:300}
+.src-l{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;font-family:Heebo,sans-serif;font-size:.79rem}
+.src-l a{border:1px solid var(--line);border-radius:999px;padding:3px 13px;
+ background:var(--paper);color:var(--navy-2);font-weight:500;
+ max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.src-l a:hover{border-color:var(--gold-soft);color:var(--gold)}
+.src-l .nolink{border:1px dashed var(--line);border-radius:999px;padding:3px 13px;color:var(--mute)}
+
+/* ---- תחתית ---- */
+footer{border-top:1px solid var(--line);margin-top:clamp(50px,8vw,90px);
+ padding:26px 0 60px;font-family:Heebo,sans-serif;font-size:.8rem;color:var(--mute);font-weight:300}
+footer a{color:var(--mute);text-decoration:underline;text-underline-offset:3px}
+
+@media (max-width:640px){
+ body{line-height:1.8}
+ .sources li{padding-inline-start:2.6em}
+}
+
+body{background:var(--bg)}
+.top{padding:clamp(40px,7vw,80px) 0 clamp(24px,4vw,40px)}
+.top h1{font-size:clamp(1.7rem,1.25rem + 2vw,2.5rem)}
+.lead{max-width:44rem;color:var(--ink-2);margin:16px 0 0;font-size:1.02em}
+.cards{display:grid;grid-template-columns:1fr;
+ gap:clamp(16px,2.4vw,24px);padding-bottom:20px}
+@media (min-width:740px){.cards{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;
+ padding:clamp(22px,3vw,30px);display:flex;flex-direction:column}
+.card .lt{font-family:Heebo,sans-serif;font-size:.74rem;letter-spacing:.16em;
+ font-weight:500;color:var(--gold);margin:0 0 10px}
+.card h2{font-size:1.28rem;margin:0 0 12px}
+.card .desc{font-size:.93em;color:var(--ink-2);margin:0 0 16px;line-height:1.72}
+.card .to{border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
+.card .to b{display:block;font-family:Heebo,sans-serif;font-size:.74rem;letter-spacing:.1em;
+ font-weight:500;color:var(--mute);margin-bottom:6px}
+.card .to span{font-size:.87em;color:var(--ink-2);line-height:1.7;font-weight:300}
+.card .go{margin-top:18px;font-family:Heebo,sans-serif;font-size:.86rem;font-weight:500;
+ color:var(--navy);border:1px solid var(--line);border-radius:999px;
+ padding:8px 20px;align-self:flex-start}
+.card .go:hover{border-color:var(--gold-soft);color:var(--gold)}
+.meta{max-width:44rem;margin:clamp(30px,5vw,48px) 0 0;font-family:Heebo,sans-serif;
+ font-size:.85rem;color:var(--mute);font-weight:300;line-height:1.8}
+.meta b{color:var(--navy);font-weight:500}
+</style>
+<noscript><style>.trailer:not(.open) .t{display:block;-webkit-line-clamp:unset}.more{display:none}</style></noscript>
+</head>
+<body>
+<div class="labbar"><div class="in"><b>מעבדת עיצוב · יד שרה</b><span class="sp"></span><a href="../index.html">מעבדת סוף השבוע ←</a></div></div><div class="wrap"><header class="top"><p class="kicker">מעשי ישראל · מעבדת סוף השבוע, 5–6.9.2026</p><h1>גלריית עיצוב — ארבע פריסות לדף מעש</h1><p class="lead">אותו תוכן בדיוק בארבע הפריסות: «יד שרה: הגמ&quot;ח שגדל למערך ארצי של השאלת ציוד רפואי» — טריילר, עשרה קטעים, שש תמונות, סרטון אחד ו-17 מקורות. רק הפריסה משתנה. כל דף עצמאי, RTL, ונבדק בטלפון.</p></header><main class='cards'><article class="card"><p class="lt">פריסה א׳</p><h2>קלאסי</h2><p class="desc">טקסט ברוחב מלא כמאמר, וקולאז&#x27; של ארבע תמונות מעל הטריילר: ראשית גדולה ושלוש קטנות.</p><div class="to"><b>הטרייד-אוף</b><span>הכי קריא ובטוח, והכי מהיר לבנות לכל מעש. המחיר: אחרי הקולאז&#x27; העליון הדף כמעט חסר תמונות, ושתי התמונות האחרונות לבדן מחזיקות 240 שורות טקסט.</span></div><a class="go" href="a-classic.html">פתיחת הפריסה ←</a></article><article class="card"><p class="lt">פריסה ב׳</p><h2>עמודת צד דביקה</h2><p class="desc">הטקסט בימין; בשמאל עמודה דביקה שהתמונה בה מתחלפת עם הקטע. בטלפון העמודה נופלת מתחת לקטע.</p><div class="to"><b>הטרייד-אוף</b><span>בדסקטופ זו הפריסה היפה ביותר, והתמונה תמיד ליד הקטע שלה. המחיר: לחמישה מתוך עשרה קטעים אין תמונה, ובעמודה נותר כרטיס־סימון ריק — וזה בדיוק מה שרואים בטלפון.</span></div><a class="go" href="b-side.html">פתיחת הפריסה ←</a></article><article class="card"><p class="lt">פריסה ג׳</p><h2>ציר זמן</h2><p class="desc">הקטעים על ציר אנכי, לכל תחנה חותם שנים והתמונות משובצות בנקודות שלה.</p><div class="to"><b>הטרייד-אוף</b><span>מסביר בשנייה איך גמ&quot;ח הפך למערך, ומרוויח מהעובדה שהמעש הזה הוא סיפור של זמן. המחיר: הוא מבטיח כרונולוגיה שהדף לא מספק — הקטעים בסדר נושאי, ורוב התחנות נושאות כמה שנים.</span></div><a class="go" href="c-timeline.html">פתיחת הפריסה ←</a></article><article class="card"><p class="lt">פריסה ד׳</p><h2>מגזין</h2><p class="desc">פתיח על תמונה ראשית עם הכותרת והטריילר, גוף בשתי עמודות בדסקטופ, ציטוט־משיכה לכל קטע, וגלריה בתחתית.</p><div class="to"><b>הטרייד-אוף</b><span>הפתיח הכי חזק והתמונות הכי גדולות. המחיר: הפתיח הכהה מרחיק את הטריילר מהגוף, וציטוט־משיכה הוא הדגשה עורכית — הוא מרים משפט אחד מכל קטע, ובכך מכריע במקום הקורא.</span></div><a class="go" href="d-magazine.html">פתיחת הפריסה ←</a></article></main><p class="meta"><b>מה זהה בכולן:</b> הטקסט נלקח מילה במילה מדף המעש (page-v2.md) — הוסרה רק שכבת המזהים הפנימית ‹מ-XXX› ו-⟨חיבור⟩. שש התמונות מוגשות מוויקישיתוף עם הכיתוב והקרדיט המלאים, ולחיצה עליהן מובילה לדף הקובץ. המקורות בתחתית כל פריסה, עם הציטוט הישיר וקישור למקור ולארכיון. הסרטון מקושר ואינו מוטמע.<br><b>מה לא נבנה:</b> אין אנימציות ואין JS מלבד כפתור «קרא עוד»; עמודת ה-sticky בפריסה ב׳ היא CSS בלבד.</p><p class="meta"><a href="../index.html">← חזרה למעבדת סוף השבוע</a></p></div><footer><div class="wrap">מעשי ישראל · גלריית עיצוב · נבנה 5.9.2026</div></footer></body>
+</html>
+<!-- DONE: 30-design -->
