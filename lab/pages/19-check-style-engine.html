@@ -1,0 +1,40 @@
+<!doctype html><html lang="he" dir="rtl"><head><title>בודק: מנוע</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--gold:#c9a84a;--ink:#1c1c1e;--mute:#6e6e73;--line:#e5e5ea;--bg:#f7f7f9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,system-ui,sans-serif;direction:rtl;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0 .3em;color:var(--navy)}h2{font-size:1.2rem;color:var(--navy);margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.2em}
+h3{font-size:1.02rem;margin:1.2em 0 .3em}
+.sub{color:var(--mute);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.summary{background:#fff;border-right:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff}th,td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;text-align:right}th{background:#fafafa;color:var(--navy);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+a{color:#0a4fa3;text-decoration:none}a:hover{text-decoration:underline}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;background:#eef2f8;color:var(--navy);margin-inline-start:4px}
+.ok{color:#1a7f37}.bad{color:#b42318}.warn{color:#b26a00}.mute{color:var(--mute)}
+nav{display:flex;gap:10px;flex-wrap:wrap;font-size:.9rem;margin:6px 0 14px}nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.md p{margin:.5em 0}.md blockquote{border-right:3px solid var(--gold);margin:.6em 0;padding:.2em 12px;color:#333;background:#fbfaf6}.md table{font-size:.85rem}
+.md h1{font-size:1.35rem}.md h2{font-size:1.15rem}.md h3{font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+.small{font-size:.8rem}
+</style>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>בודק: מנוע</h1><div class="sub"><span class="mute">yad-sarah/checks/style-engine.md</span> · 17 שורות</div><div class="md"><h1>בדיקה עיוורת — יד שרה · סגנון engine · 19-check-style-engine · 5.9.2026</h1>
+<p><em>קובץ עבודה; נכתב תוך כדי. הדף הנבדק: <code>lab/yad-sarah/styles/engine/page.md</code>. שיטת הבדיקה: קריאת קורא תם תחילה, אחר כך כל ציטוט ומספר מול הסנפשוט/המקור החי, לא מול היומן.</em></p>
+<h2>יומן בדיקה (טיוטה תוך כדי)</h2>
+<h3>קורא תם — רשמים מהקריאה הראשונה (לפני הבדיקה הטכנית)</h3>
+<ul>
+<li>כותרת לבדה: "מכשירי אינהלציה שהושאלו לשכנים בירושלים הפכו ליותר ממאה סניפים של ציוד רפואי בהשאלה" — הבנתי: ארגון השאלת ציוד, גדל מגמ"ח ביתי. היקף: "יותר ממאה סניפים" — לא מנופח. מי היהודי? הכותרת לא נוקבת באדם. מה הטוב? "ציוד רפואי בהשאלה" — ברור.</li>
+<li>טריילר: המשפט האחרון "לארגון, לא לאדם" — כקורא תם לא הבנתי למה זה נאמר; זה רומז למשהו שהדף עוד לא סיפר. שאלה: "מי האדם? למה זה חשוב?"</li>
+<li>טריילר קרוא כתקציר מחקר: "לפי פורטל כל-זכות", "בעמוד ההשאלה של הארגון (נכון למאי 2024)", "נכון ל-2024" — שלוש חותמות זמן/ייחוס בחמישה משפטים. איבדתי עניין במשפט הרביעי ("בעמוד ההשאלה של הארגון (נכון למאי 2024) כתוב").</li>
+<li>רושם על הארגון: הגון, גדול, חי מתרומות; אבל פרק "מה בדיוק בחינם" ופרק פסק הדין משאירים תחושה של חשד. "אף אחד ממסמכי הארגון בתיק אינו אומר שהפיקדון מוחזר" — כקורא תם שאלתי: "אז הם לא מחזירים את הפיקדון?" (מילת "פיקדון" בעצמה אומרת שמחזירים.)</li>
+<li>"5,000 מתנדבים ו-310 עובדים" בטריילר, ואז בגוף 6,000/10,000/7,000/5,000 — שאלה תמימה: "אז כמה יש? למה ירד?" הדף עונה "אין הסבר". סביר.</li>
+<li>"מפעל חייו" בפסקת המנוע (כלי עבודה) — לא בדף. בסדר.</li>
+<li>איפה הפסקתי להתעניין: פרק "מי משלם" — שבע שורות מספרים בלי אדם. פרק פסק הדין — רשימת שבע תרומות עם סכומים; הקורא לא צריך אותה כדי להבין את המעש.</li>
+<li>מבחן המשימה מהטריילר: מי היהודי — אורי ומיכל לופוליאנסקי; מה הטוב — השאלת ציוד רפואי חינם ב-100+ סניפים. עובר.</li>
+<li>רפרנטים: "מהגמ"ח הזה" — ברור. "המנוע" בכותרת-משנה "הכלל שהמנוע נשען עליו" — כקורא תם לא ידעתי מה "המנוע" (מונח פנימי של הסגנון שדלף לדף).</li>
+</ul></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 05.09 06:36Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
