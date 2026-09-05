@@ -1,0 +1,256 @@
+<!doctype html><html lang="he" dir="rtl"><head><title>הממיר — דוח</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--gold:#c9a84a;--ink:#1c1c1e;--mute:#6e6e73;--line:#e5e5ea;--bg:#f7f7f9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,system-ui,sans-serif;direction:rtl;line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0 .3em;color:var(--navy)}h2{font-size:1.2rem;color:var(--navy);margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.2em}
+h3{font-size:1.02rem;margin:1.2em 0 .3em}
+.sub{color:var(--mute);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.summary{background:#fff;border-right:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff}th,td{border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top;text-align:right}th{background:#fafafa;color:var(--navy);font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+a{color:#0a4fa3;text-decoration:none}a:hover{text-decoration:underline}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.78rem;background:#eef2f8;color:var(--navy);margin-inline-start:4px}
+.ok{color:#1a7f37}.bad{color:#b42318}.warn{color:#b26a00}.mute{color:var(--mute)}
+nav{display:flex;gap:10px;flex-wrap:wrap;font-size:.9rem;margin:6px 0 14px}nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.md p{margin:.5em 0}.md blockquote{border-right:3px solid var(--gold);margin:.6em 0;padding:.2em 12px;color:#333;background:#fbfaf6}.md table{font-size:.85rem}
+.md h1{font-size:1.35rem}.md h2{font-size:1.15rem}.md h3{font-size:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 14px;margin:8px 0}summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
+.small{font-size:.8rem}
+</style>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>הממיר — דוח</h1><div class="sub"><span class="mute">yad-sarah/converter/REPORT.md</span> · 201 שורות</div><div class="md"><h1>דוח 29-converter · הממיר page.md → המבנה שהאתר קורא</h1>
+<p><strong>הכלי:</strong> <code>~/company/lab/tools/md2site.py</code> · פייתון סטנדרטי בלבד · בלי DB, בלי רשת, בלי git.
+<strong>הרצה:</strong></p>
+<pre><code>python3 md2site.py &lt;page.md&gt; [--images images.md] [--out out.json]
+                   [--preview preview.html] [--deed-id ID] [--keep-ordinals]
+</code></pre>
+<p><strong>מה שהורץ בפועל (5.9.2026):</strong></p>
+<pre><code>python3 md2site.py ~/company/deeds/yad-sarah/page-v2.md \
+    --images ~/company/deeds/yad-sarah/images.md \
+    --out fable.json --preview preview-fable.html
+python3 md2site.py ~/company/opus-run/yad-sarah/page-v2.md \
+    --images ~/company/opus-run/yad-sarah/images.md \
+    --out opus.json --preview preview-opus.html
+</code></pre>
+<p>התוצרים: <code>fable.json</code>, <code>opus.json</code>, <code>preview-fable.html</code>, <code>preview-opus.html</code>
+(שני ה-preview הועתקו גם ל-<code>~/maasei-review/lab/converter/</code>).</p>
+<hr />
+<h2>1 · המספרים בשני הדפים</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>פייבל (<code>deeds/yad-sarah</code>)</th>
+<th>אופוס (<code>opus-run/yad-sarah</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>קטעים (<code>sections</code>)</td>
+<td><strong>11</strong> (10 קטעי גוף + "מה הדף הזה אינו יודע")</td>
+<td><strong>9</strong> (כולל "מה לא ידוע" ו"השם" במקומם)</td>
+</tr>
+<tr>
+<td>מילים בקטעים</td>
+<td>1,632</td>
+<td>2,143</td>
+</tr>
+<tr>
+<td>תמונות</td>
+<td><strong>6</strong> · לכולן קובץ ורישיון</td>
+<td><strong>6</strong> · לכולן קובץ ורישיון</td>
+</tr>
+<tr>
+<td>סרטונים</td>
+<td>1 (יוטיוב, מזהה חולץ)</td>
+<td>1 (אותו סרטון)</td>
+</tr>
+<tr>
+<td>מקורות בשכבה</td>
+<td><strong>17</strong></td>
+<td><strong>22</strong></td>
+</tr>
+<tr>
+<td>ציטוטים שחולצו</td>
+<td>40</td>
+<td>69</td>
+</tr>
+<tr>
+<td><code>citations</code> שנוצרו לאתר</td>
+<td><strong>13</strong> מתוך 17</td>
+<td><strong>21</strong> מתוך 22</td>
+</tr>
+<tr>
+<td>משפטים בטקסט המוצג</td>
+<td>102</td>
+<td>131</td>
+</tr>
+<tr>
+<td>מתוכם נושאי ‹מ-XXX› (→ <code>claims</code>)</td>
+<td>80</td>
+<td>109</td>
+</tr>
+<tr>
+<td>מזהים ייחודיים בשימוש</td>
+<td>74</td>
+<td>86</td>
+</tr>
+<tr>
+<td>⟨חיבור⟩/⟨מקשר⟩ (→ <code>markers</code>)</td>
+<td>5</td>
+<td>14</td>
+</tr>
+<tr>
+<td>אזהרות הממיר: חוסם · אזהרה · מידע</td>
+<td>0 · 7 · 9</td>
+<td>0 · 2 · 1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>אימות שאין המצאה ואין אובדן.</strong> לכל פסקה בפלט נבדק שראשה וסופה קיימים מילה
+במילה בקובץ המקור, ולכל משפט במקור נבדק שהוא נמצא בפלט — <strong>0 ו-0 בשני הכיוונים,
+בשני הדפים.</strong> כל 34 ה-<code>citations</code> נבדקו כמחרוזת מדויקת מול קובץ הדף — <strong>0 סטיות.</strong>
+בטקסט המוצג לא נותר ולו סימן אחד של השכבה הפנימית (‹›, ⟨⟩) — נבדק על כל
+הכותרות, הטריילרים, גופי הקטעים, כיתובי התמונות, תיאורי הווידאו וה-citations.</p>
+<hr />
+<h2>2 · מה עבר</h2>
+<ul>
+<li><strong>שני הפורמטים נקראים באותו כלי.</strong> פייבל כותב כותרת ב-<code>**מודגש**</code>, <code>### 1 · שם</code>,
+  <code>## מה הדף הזה אינו יודע</code> ברמת <code>##</code>, כיתובים תחת <code>**תמונה N · …**</code>, <code>## סרטונים</code>,
+  <code>## מקורות</code>, ציטוטים ב-<code>"…"</code>. אופוס כותב כותרת ב-<code>#</code> בתוך <code>## כותרת</code>, <code>### שם</code>
+  בלי מספור, <code>### מה לא ידוע</code> <strong>בתוך</strong> גוף הדף, <code>**ת-0N · …**</code>, <code>## וידאו</code>,
+  <code>## שכבת המקורות</code>, ציטוטים ב-<code>»…«</code>. שניהם עוברים בלי דגל מיוחד.</li>
+<li><strong>השכבה הפנימית מנוקה ונשמרת.</strong> ‹מ-XXX› ו-⟨…⟩ יורדים מהטקסט המוצג ונשמרים
+  ב-<code>lab.claims</code> (משפט → מזהים) וב-<code>lab.markers</code>. טווח ‹מ-023 – מ-029› מורחב
+  למזהים בודדים, והטוקן הגולמי נשמר לצדו ב-<code>raw_ids</code>. שום דבר לא נמחק (ח-5).</li>
+<li><strong>תמונות:</strong> הכיתוב והקרדיט מגיעים מהדף; הקובץ, עמוד המקור, הצלם, השנה
+  והרישיון מגיעים מ-<code>images.md</code>; המיקום בדף מגיע מטבלת הסדר. 6/6 בשני הדפים.</li>
+<li><strong>מקורות:</strong> מספר, כותרת, כל הציטוטים, לינק, לינק ארכיון ומזהי ‹מ› — לכל פריט.</li>
+<li><strong>בדיקת כיסוי מזהים.</strong> אצל פייבל 9 מזהים אינם מכוסים בשכבת המקורות —
+  מ-068, מ-074, מ-079, מ-088, מ-092, מ-101, מ-109, מ-111, מ-112 — <strong>בדיוק
+  תשעת המזהים שהדף עצמו מצהיר עליהם</strong> כ"מזהים מתודיים שאינם מקור חיצוני".
+  אצל אופוס 12 מזהים כאלה, ורק <strong>שישה</strong> מהם (מ-079, מ-080, מ-123, מ-125, מ-126,
+  מ-129) נמצאים בהערה המקבילה שבסוף הדף. השישה האחרים — <strong>מ-132, מ-133, מ-134,
+  מ-135, מ-137, מ-138</strong> — אינם בשכבת המקורות ואינם ברשימה המתודית. פתחתי את
+  <code>opus-run/yad-sarah/journal.md</code>: כל השישה קיימים בו כממצאים (למשל
+  "מ-138 · חצאי התחקיר שנשמרו מול אלה שהושמטו — פרשת המלון · דרגה ב'"), כלומר
+  אינם המצאה — אבל <strong>הדף עצמו אינו נותן לקורא שום דרך להגיע אליהם.</strong> זה ליקוי
+  בדף, לא בממיר, והוא נשאר פתוח.</li>
+<li><strong>בדיקת ⟨מקשר⟩ אצל אופוס.</strong> בקובץ 15 סימונים; אחד מהם בהקדמה המסבירה, ואחד
+  הוא הווריאנט ⟨מקשר — נשען כולו על מ-116⟩. נשארים <strong>13 ⟨מקשר⟩ בגוף</strong> —
+  בדיוק כמספר שהדף מצהיר עליו ("יש בדף שלושה־עשר כאלה"). ההצהרה נכונה.</li>
+</ul>
+<hr />
+<h2>3 · מה נפל</h2>
+<h3>3א · הבלוקר האמיתי: אין לאן לכתוב את התמונות, הווידאו והמקורות</h3>
+<p>נקרא ב-<code>~/maasei-israel/scripts/apply_canonical.py</code>: הסקריפט כותב <strong>רק</strong> את
+<code>TEXT_FIELDS</code> (title/description/origin_story/act/ripple/aftermath/recognition/
+summary_short/canonical_type/engine_sentence + <code>_en</code>) ואת <code>JSON_FIELDS</code>
+(<code>sections</code>, <code>infobox</code>, <code>honors</code>, <code>numbers</code>). <strong>הוא אינו כותב</strong> <code>media_url</code>,
+<code>media_urls</code>, <code>citations</code> או <code>audit.image_provenance</code>.</p>
+<p>ונקרא ב-<code>~/maasei-israel/src/lib/data.ts</code> (טיפוס <code>Entry</code>, שורות 77–143):
+<strong>אין עמודה בשם <code>images</code> ואין עמודה בשם <code>videos</code>.</strong> מה שיש:
+- תמונות = <code>media_url</code> + <code>media_urls[]</code> + <code>audit.image_provenance[]</code> (<code>ImageProvenance</code>, שורות 10–32);
+- וידאו = <code>media_type:"video_embed"</code> וכתובת יוטיוב ב-<code>media_url</code>/<code>media_urls</code>.
+  <code>DeedPageBody.tsx:94–115</code> מפצל את <code>media_urls</code>: מה שיש בו מזהה יוטיוב →
+  נגן, השאר → תמונה. <strong>לווידאו אין באתר שדה כותרת ואין שדה תיאור</strong> — רק id ו-URL;
+- מקורות = <code>citations[] {quote, source_label, source_url, locator?}</code> (שורות 36–48),
+  מוצגות בתחתית הדף (<code>DeedPageBody.tsx:307–313</code>).</p>
+<p>לכן הפלט נושא <code>image_provenance</code> ו-<code>video_provenance</code> ברמה העליונה — בדיוק כמו
+בתקדים <code>bar-natan/canonical.json</code> — וגם <code>citations</code>. <strong>אבל אין היום סקריפט
+שכותב את שלושת אלה ל-DB.</strong> זה החסם שנשאר פתוח אחרי המשימה הזאת, והוא לא
+בממיר: הוא בצד הכתיבה.</p>
+<h3>3ב · חמישה שדות שהאתר קורא ואינם קיימים בפורמט המרקדאון</h3>
+<p><code>infobox</code>, <code>honors</code>, <code>numbers</code>, <code>canonical_type</code>, <code>engine_sentence</code> — <strong>אף אחד
+משני הדפים אינו מכיל אותם.</strong> הממיר אינו ממציא אותם ואינו כותב אותם כערך ריק
+(כדי שמפעיל עתידי לא ידרוס בהם נתון קיים ב-DB); הם נרשמים ב-<code>lab.missing_fields</code>.
+נוסף עליהם: <strong>אין אנגלית בשום מקום</strong> — <code>title_en</code>, <code>description_en</code>,
+<code>sections[].heading_en/body_en</code> ריקים בשני הדפים.
+הערה: <code>numbers</code> נכתב על ידי <code>apply_canonical.py</code> אך <strong>אינו מופיע בטיפוס <code>Entry</code></strong> —
+עמודה שנכתבת ואינה נקראת. וב-<code>InfoboxRow</code> שבאתר <strong>אין <code>source_quote</code></strong>, אף שהוא
+קיים ב-<code>infobox.json</code> של בר-נתן; <code>data.ts:194–202</code> מסתיר שורת infobox שאין לה <code>source</code>.</p>
+<h3>3ג · ליקויים בדפים עצמם שהממיר חשף</h3>
+<p><strong>פייבל — 7 אזהרות, כולן נפתחו ידנית בקובץ המקור ואומתו:</strong>
+| # | מקור | מה |
+|---|---|---|
+| 8 | יד שרה, עמוד השאלת ציוד (ארכיון Wayback 24.5.2024) | <strong>אין לינק כלל</strong> — רק תיאור בסוגריים |
+| 11 | קטלוג הציוד, yad-sarah.net | <strong>אין לינק כלל</strong> |
+| 15 | מעוז, "בין הולילנד ל'יד שרה'" | <strong>אין לינק</strong> (ה-PDF מקושר בפריט 4 בלבד) |
+| 17 | רישום התצלום בארכיון עיריית טורונטו | <strong>אין לינק</strong> |
+| 5 | TheMarker | לינק ארכיון <strong>קטוע</strong>: <code>…/web/20260822011111/</code> — חותמת בלי כתובת יעד |
+| 12 | כל-זכות | לינק ארכיון קטוע: <code>…/web/20260822012114/</code> |
+| 13 | כלכליסט/Ynet | לינק ארכיון קטוע: <code>…/web/20260822011055/</code> |</p>
+<p>ארבעת המקורות בלי לינק <strong>אינם נכנסים ל-<code>citations</code></strong> — 13 מתוך 17. שלושת
+לינקי הארכיון הקטועים כן נכנסים (הלינק הראשי שלהם תקין), אבל לחיצה על
+"ארכיון" תוביל לדף חיפוש של Wayback ולא ללכידה.</p>
+<p><strong>אופוס — 2 אזהרות:</strong>
+- מקור 21 (ויקישיתוף, חמישה קבצי תצלום): הכתובת בפריט היא <strong>תבנית</strong> —
+  <code>https://commons.wikimedia.org/wiki/File:&lt;שם הקובץ&gt;</code> — ולא כתובת שאפשר ללחוץ
+  עליה. הממיר מסמן <code>url_is_template</code> ו<strong>אינו</strong> מכניס אותה ל-<code>citations</code> (21 מתוך 22).
+- באותו מקור, הציטוט היחיד שנמצא הוא המילה "יעקב" (שם הצלם בתוך סוגריים) —
+  כלומר בפריט אין ציטוט ראיה, יש מטא-דאטה.</p>
+<p><strong>כיתוב בלי תמונה — לא קרה בפועל.</strong> בשני הדפים 6/6 הכיתובים נקשרו לקובץ,
+לרישיון ולעמוד מקור. בהרצה בלי <code>--images</code> הממיר מסמן את כל שישה כ<strong>חוסם</strong>
+("כיתוב בלי קובץ תמונה", "תמונה בלי רישיון") — כלומר הבדיקה עובדת, פשוט
+<code>images.md</code> קיים וזהה בשתי התיקיות.</p>
+<h3>3ד · מה נמצא בממיר עצמו ותוקן (לפני שהאמנתי למדידה שלו)</h3>
+<ol>
+<li><strong>כיסוי מזהים של 100% — שהיה כוזב.</strong> בהרצה ראשונה יצא "0 מזהים לא מכוסים"
+   אצל פייבל. בפתיחת הקובץ התברר שההערה המתודית שבסוף השכבה (<code>*מזהים מתודיים…*</code>)
+   נספחה לפריט 17, ותשעת המזהים שבה נספרו כאילו פריט 17 מכסה אותם. תוקן:
+   שורת נטוי בעמודה 0 סוגרת את הפריט. אחרי התיקון: 9 לא מכוסים — והם בדיוק
+   התשעה שהדף מצהיר עליהם.</li>
+<li><strong>"מקור בלי לינק" כוזב</strong> בפריטים שכל כתובתם היא לכידת ארכיון (פייבל 9 ו-16,
+   אופוס 9 ו-10). תוקן: לכידת ארכיון היא לינק לכל דבר, ומסומנת <code>url_is_archive</code>.</li>
+<li><strong>גרשיים עבריים שברו ציטוטים.</strong> <code>תשנ"ד</code>, <code>צה"ל</code>, <code>ש"ח</code>, <code>ע"פ</code> נכתבים באותו
+   תו כמו מרכאות פותחות, והציטוט של פריט 2 אצל פייבל יצא <code>ד.**</code>. תוקן: מרכאה
+   הצמודה לאות עברית אינה גבול ציטוט.</li>
+<li><strong>תיקון פיסוק ששינה ציטוט.</strong> ניקוי הרווחים אחרי הסרת ‹מ› כיווץ גם רווח
+   שהיה במקור: <code>"…of Jerusalem : City Hall"</code> יצא <code>": City Hall"</code> — כלומר ציטוט
+   שאינו מילה במילה, ובאתר גם קפיצת ה-Text-Fragment אליו הייתה נשברת. תוקן:
+   מכווצים רק את הרווח שההסרה עצמה יצרה.</li>
+<li>הערת עורך רב-שורתית נכנסה כ-<code>meta</code> של הסרטון במקום כהערה; טבלאות וכותרות
+   משנה בבלוק התמונות נספרו כהערות גלריה. תוקן.</li>
+</ol>
+<hr />
+<h2>4 · חמש השאלות שצריך את תומר בשבילן</h2>
+<ol>
+<li><strong>מי כותב ל-DB את התמונות, הווידאו והמקורות?</strong> <code>apply_canonical.py</code> כותב
+   טקסט + sections/infobox/honors/numbers בלבד. <code>image_provenance</code>,
+   <code>video_provenance</code> ו-<code>citations</code> שהממיר מפיק — אין להם היום מפעיל.
+   להרחיב את <code>apply_canonical.py</code>, או לכתוב מפעיל נפרד?</li>
+<li><strong>איפה מציגים את שכבת המקורות?</strong> האתר מציג <code>citations</code> — ציטוט אחד לכל
+   מקור, בלי לינק ארכיון ובלי מזהי ‹מ›. בדפים יש 40 ו-69 ציטוטים ב-17 ו-22
+   פריטים, עם ארכיון ועם המזהים. מה עולה: פריט אחד לכל מקור (הציטוט הראשון,
+   כפי שהממיר עושה עכשיו), או כל ציטוט כ-citation נפרדת? ומה עם לינק הארכיון —
+   שדה חדש, או בתוך <code>source_label</code>?</li>
+<li><strong><code>sections</code> בלי אנגלית — האתר דורש <code>_en</code>?</strong> <code>ArticleSection</code> מגדיר את
+   <code>heading_en</code>/<code>body_en</code> כאופציונליים ו-<code>DeedPageBody</code> נופל חזרה לעברית, אבל
+   כלל 20 (לפי ההערה ב-<code>DeedImageCollage</code>) אוסר על מחרוזת עברית לשרוד מעבר
+   לאנגלית. דף עברי בלבד עולה כמו שהוא, או ממתין לתרגום?</li>
+<li><strong><code>infobox</code>, <code>canonical_type</code>, <code>engine_sentence</code>, <code>honors</code>, <code>numbers</code> —
+   מי מייצר אותם?</strong> אין להם מקום בפורמט <code>page-v2.md</code>. להוסיף אותם לפורמט הכתיבה
+   (סעיף <code>## אינפובוקס</code> וכו'), או שלב נפרד אחרי הכתיבה כמו בבר-נתן?
+   ושים לב: <code>numbers</code> אינו נקרא באתר, ו-<code>source_quote</code> שב-<code>infobox.json</code> של
+   בר-נתן אינו קיים בטיפוס <code>InfoboxRow</code>.</li>
+<li><strong>שכבת ה-‹מ› לקורא — כן או לא?</strong> הממיר שומר <code>claims: [{sentence, m_ids}]</code>
+   ל-80 ו-109 משפטים. זו שקיפות ברמת המשפט שהאתר לא יודע להציג היום.
+   להציג (הערת שוליים לכל משפט), או להשאיר פנימי לביקורת בלבד?</li>
+</ol>
+<p><strong>בונוס למחלקת התוכן, לא לתומר:</strong> שלושה ליקויים שהם בדפים עצמם ולא בממיר,
+ונשארים פתוחים — ארבעת המקורות בלי לינק ושלושת לינקי הארכיון הקטועים אצל
+פייבל (3ג); הלינק התבניתי אצל אופוס (3ג); וששת המזהים ‹מ-132…מ-138› שהדף
+של אופוס נשען עליהם בלי שום דרך של הקורא להגיע אליהם (סעיף 2).</p>
+<hr />
+<h2>5 · מה הכלי לא עושה (מתועד גם בראש <code>md2site.py</code>)</h2>
+<p>אין <code>--apply</code>, אין DB, אין רשת, אין git · אינו מתרגם ואינו יוצר שדות <code>_en</code> ·
+אינו ממציא מספר, שנה או כיתוב, וכל ערך בפלט מועתק מהמרקדאון כלשונו (ח-1) ·
+אינו מאמת שציטוט אכן מופיע במקור החיצוני ואינו בודק לינקים · זיהוי המבנה
+נשען על שמות הכותרות, וכותרת שאינה ברשימה נשמרת ב-<code>lab.unrecognized_blocks</code>
+ואינה נזרקת (בשני הדפים: 0 כאלה) · בחירת הציטוט ל-<code>citation</code> היא הראשון שאורכו
+25 תווים ומעלה — היוריסטיקה, וצריכה עין אדם.</p></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 05.09 00:05Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
