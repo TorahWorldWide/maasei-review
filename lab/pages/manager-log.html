@@ -23,7 +23,7 @@ details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:
 .num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
 .small{font-size:.8rem}
 </style>
-</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>יומן המנהל</h1><div class="sub"><span class="mute">MANAGER-LOG.md</span> · 7 שורות</div><div class="md"><h1>יומן המנהל — מעבדת סוף השבוע</h1>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>יומן המנהל</h1><div class="sub"><span class="mute">MANAGER-LOG.md</span> · 16 שורות</div><div class="md"><h1>יומן המנהל — מעבדת סוף השבוע</h1>
 <h2>5.9.2026 00:40Z · הרמס (פייבל 5.1) — שיגור</h2>
 <ul>
 <li>נבנה: PLAN.md, lab_runner.sh (בש טהור, 4 מסלולים תחת systemd), 32 יחידות ב-queue.tsv, כלים (journal_slim.py, verify_quotes.py, lab_pages.py, lab_status.sh).</li>
@@ -31,4 +31,14 @@ details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:
 <li>בודק: פייבל 5.1 טרי על כל הגרסאות (הוראת תומר); ניסוי בודק: אופוס 5 + סונט 5 על דף A להשוואה.</li>
 <li>מגבלה מתועדת: YouTube מהשרת אסור; פרוקסי (Piped/Invidious) נוסה פעם אחת — נכשל. תמלילים = 2 שעל הדיסק.</li>
 <li>אין עוגן /usage → quota.py מודד צריכה בלבד, לא יתרה.</li>
-</ul></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 05.09 17:45Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
+</ul>
+<h2>5.9.2026 19:10Z · הרמס (פייבל 5.1) — ביקורת מנהל שנייה (הראשונה, 09:00Z, לא השאירה רישום — כנראה נפלה על מכסה)</h2>
+<ul>
+<li><strong>מצב:</strong> כל 32 היחידות נגמרו (האחרונה 27-videos ב-11:59Z). 4 המסלולים כבו. שתי המתנות מכסה (~3.3 שעות כל אחת: 02:40→06:05, 08:00→11:07) — היחידות שרדו והמשיכו באותו סשן.</li>
+<li><strong>נבדק (מהקבצים, לא מהזיכרון):</strong> 9 דפים — כולם DONE + שכבת מקורות (A/B/C ‹מ-›, קול/סבב-אחד לפי F-); 4 יומני מחקר — ממצאים עם ציטוט+לינק+דרגה+סנפשוט (A: 42 ב-findings.md, B/C/D ביומן); 13 ממצאי בודק — כולם עם ראיות (ציטוט מהמקור + קובץ/לינק), מבחן הקורא התם, שורת COUNTS תואמת ספירת כותרות (אופוס: 3/14/10 + 4 בקורא התם = 3/16/12 המוצהר). דגימת עומק: checks/A.md (החוסם = ציטוט-כלאיים כותרת/תמליל, ראיה מהתמליל). compare.md — המכריע, שלם. סונט: 4 ממצאים/59 שורות — דל, אבל זו תוצאה, לא כשל. <strong>לא נפסלה ולא הורצה שוב אף יחידה.</strong></li>
+<li><strong>באג שנמצא ותוקן:</strong> <code>state/counts.tsv</code> היה ריק — <code>lab_runner.sh</code> שורה 224 סינן <code>check-*</code> אבל שמות היחידות מתחילים במספר (<code>08-check-A</code>). תוקן ל-<code>*check-*</code>; הטבלה נבנתה מחדש ל-13 הבודקים.</li>
+<li><strong>verify_quotes.py:</strong> ספר מזהי ‹מ-008› כ"מספרים שלא נמצאו". תוקן (מסיר ‹…› ו-F-xxx לפני החילוץ); הורץ מחדש על 9 הדפים + 2 הקיימים. וידוא: החוסם של פייבל על דף A (ציטוט-כלאיים) נתפס גם בקוד כ-partial.</li>
+<li><strong>הוחלט:</strong> יחידת העמקה אחת — <code>33-checker-diff</code> (פייבל, מסלול A, ~45 דק'): אופוס הצהיר פי 2 ממצאים מפייבל על אותו דף (31 מול 17), ובלי לדעת כמה מהעודף אמיתי אין תשובה ל"איזה בודק, ואם בכלל" — אחת מ-4 ההכרעות של תומר. שוגר 19:07Z. <strong>לא</strong> נוספה השוואה של מחקר D (רץ אחרי 31 → לא בהשוואה) — פתוח, לא מכריע.</li>
+<li><strong>תקציב:</strong> פלט 8.07M (פייבל 7.14M / אופוס 0.60M / סונט 0.33M) — פייבל מעל התכנון (5.5–6.5M), בעיקר בגלל הכתיבה (668K ל-write-A). היחידה החדשה ≈ +0.15M.</li>
+<li><strong>notes.tsv</strong> — הערה ל-32 היחידות. SUMMARY.md — נכתב לראשונה עם מספרים.</li>
+</ul></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 05.09 19:09Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>

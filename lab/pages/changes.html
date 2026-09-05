@@ -23,7 +23,7 @@ details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:
 .num{font-variant-numeric:tabular-nums;direction:ltr;display:inline-block}
 .small{font-size:.8rem}
 </style>
-</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>סעיף החופש — מה שונה בחברה</h1><div class="sub"><span class="mute">CHANGES.md</span> · 21 שורות</div><div class="md"><h1>סעיף החופש — מה שיניתי בחברה (5–6.9.2026)</h1>
+</head><body><div class="wrap"><nav><a href="index.html">ראשי</a><a href="research.html">השוואת מחקר</a><a href="styles.html">סגנונות</a><a href="costs.html">הוצאות</a><a href="design/index.html">גלריית עיצוב</a><a href="../index.html">← דף הסקירה</a></nav><h1>סעיף החופש — מה שונה בחברה</h1><div class="sub"><span class="mute">CHANGES.md</span> · 34 שורות</div><div class="md"><h1>סעיף החופש — מה שיניתי בחברה (5–6.9.2026)</h1>
 <p><em>כל שינוי: מה · למה · איך חוזרים אחורה. שום דבר לא נמחק.</em></p>
 <h2>1. רץ מעבדה חדש (<code>lab/lab_runner.sh</code>) לצד <code>night_runner.sh</code> (לא במקומו)</h2>
 <p><strong>מה:</strong> רץ בש טהור עם תור אחד ל-4 מסלולים, תלויות בין יחידות (קלט חסר = ממתין ונבדק שוב, לא נדחה), נפילת מודל לעבודת רקע (אופוס→סונט), רישום עלות אוטומטי לכל יחידה מהלדג'ר, ספירת ממצאי בודק אוטומטית, בניית דפים ופרסום אחרי כל יחידה.
@@ -39,4 +39,14 @@ details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:
 <strong>חזרה:</strong> קבצים ב-lab/tools; לא מחוברים לצנרת החיה.</p>
 <h2>4. דיווח בלי מודל</h2>
 <p><strong>מה:</strong> <code>~/.hermes/scripts/lab_status.sh</code> — קרון הרמס <code>--no-agent</code> כל 3 שעות: מה נגמר, מה רץ, כמה פלט.
-<strong>למה:</strong> דוח בוקר שנפל 3/4 בקרים (מכסה/קרדנציאלס) — דיווח שלא תלוי במכסה לא נופל איתה.</p></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 05.09 17:45Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
+<strong>למה:</strong> דוח בוקר שנפל 3/4 בקרים (מכסה/קרדנציאלס) — דיווח שלא תלוי במכסה לא נופל איתה.</p>
+<h2>5. תיקון: ספירת ממצאים אוטומטית לא רצה (19:05Z)</h2>
+<p><strong>מה:</strong> <code>lab_runner.sh</code> שורה 224 — <code>case "$unit" in check-*)</code> → <code>*check-*)</code>. שמות היחידות מתחילים במספר, כך שהתבנית לא תפסה אף אחת ו-<code>counts.tsv</code> נשאר ריק. הטבלה נבנתה מחדש ידנית ל-13 הבודקים.
+<strong>חזרה:</strong> <code>lab_runner.sh.bak-countfix</code>.</p>
+<h2>6. תיקון: verify_quotes.py ספר מזהי ציטוט כמספרים (19:06Z)</h2>
+<p><strong>מה:</strong> מזהי ‹מ-008› ו-F-012 בגוף הדף נספרו כ"מספרים שלא נמצאו" (8–10 לדף, כולם רעש). התיקון מסיר אותם לפני החילוץ, ומכיר גם בכותרת "שכבת מקורות". הורץ מחדש על כל הדפים.
+<strong>חזרה:</strong> <code>tools/verify_quotes.py.bak-markers</code>.</p>
+<h2>7. יחידה 33-checker-diff נוספה לתור (19:07Z)</h2>
+<p><strong>מה:</strong> יחידת העמקה קטנה (פייבל, מסלול A): מיפוי ממצא-לממצא של שלושת הבודקים על דף A ואימות הייחודיים מול המקורות. <code>tasks/33-checker-diff.md</code>, שורה אחרונה ב-<code>queue.tsv</code>, <code>systemctl start maasei-lab@A</code>.
+<strong>למה:</strong> אופוס הצהיר 31 ממצאים מול 17 של פייבל — בלי אימות המספר לא מכריע.
+<strong>חזרה:</strong> למחוק את השורה מ-<code>queue.tsv</code>; <code>sudo systemctl stop maasei-lab@A</code>.</p></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 05.09 19:09Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
