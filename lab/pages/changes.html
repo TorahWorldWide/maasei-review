@@ -50,10 +50,10 @@ details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:
 <p><strong>מה:</strong> יחידת העמקה קטנה (פייבל, מסלול A): מיפוי ממצא-לממצא של שלושת הבודקים על דף A ואימות הייחודיים מול המקורות. <code>tasks/33-checker-diff.md</code>, שורה אחרונה ב-<code>queue.tsv</code>, <code>systemctl start maasei-lab@A</code>.
 <strong>למה:</strong> אופוס הצהיר 31 ממצאים מול 17 של פייבל — בלי אימות המספר לא מכריע.
 <strong>חזרה:</strong> למחוק את השורה מ-<code>queue.tsv</code>; <code>sudo systemctl stop maasei-lab@A</code>.</p>
-<h2>8. תיקון: הרץ שיגר בודק לפני DONE של הכותב (6.9 03:20Z)</h2>
+<h2>8. תיקון: הרץ שיגר בודק לפני DONE של הכותב (6.9 03:05Z)</h2>
 <p><strong>מה:</strong> <code>lab_runner.sh</code> — בדיקת הקלט הייתה "קובץ לא ריק" (<code>-s</code>). נוספה <code>input_ready()</code>: הקובץ לא ריק <strong>וגם</strong> היחידה שמייצרת אותו (עמודה 9 ב-<code>queue.tsv</code>) רשומה ב-<code>done-*.txt</code> של מסלול כלשהו. קלט בלי יחידה מייצרת (הדפים הקיימים) — כמו קודם.
 <strong>למה:</strong> 13-check-A-opus (מסלול D) התחיל 02:21:57 על <code>research/A/page.md</code> שנסגר 02:24:11 — 4 מ-31 ממצאיו הם על טיוטה. נחשף ביחידה 33. כל השאר בדקו דפים סגורים (אותו מסלול = סדרתי).
 <strong>חזרה:</strong> <code>lab_runner.sh.bak-donegate</code>. night_runner לא נגע.</p>
-<h2>9. lab_pages.py: דף לאתר עבור 33-checker-diff (03:20Z)</h2>
+<h2>9. lab_pages.py: דף לאתר עבור 33-checker-diff (03:05Z)</h2>
 <p><strong>מה:</strong> מיפוי <code>'33-checker-diff' → yad-sarah/checks/checker-compare.md</code> ברשימת התוצרים, כדי שהאתר יציג את השוואת הבודקים.
-<strong>חזרה:</strong> <code>tools/lab_pages.py.bak-unit33</code>.</p></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 06.09 03:06Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
+<strong>חזרה:</strong> <code>tools/lab_pages.py.bak-unit33</code>.</p></div><p class="sub small" style="margin-top:40px">נבנה אוטומטית (lab_pages.py, 0 טוקנים) · 06.09 03:07Z · מעבדת סוף השבוע, יד שרה</p></div></body></html>
